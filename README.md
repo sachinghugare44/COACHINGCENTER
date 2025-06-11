@@ -1,0 +1,2 @@
+I created an Angular project for a coaching center as an informative website to introduce the classes. We used HTML, CSS, and JavaScript for the development. The website consists of a single homepage that displays information about the coaching center, including the services provided, the subjects offered, and performance highlights such as student scores. The application was developed using Angular and hosted on AWS.
+Thank you.
