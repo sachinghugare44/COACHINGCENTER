@@ -1,0 +1,135 @@
+.main-div{
+background-color:crimson;
+height: 300px;
+}
+.maintitle{
+    color: white;
+    font-size: 78px;
+    font-weight: 900;
+
+}
+.sub-title{
+    color: white;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-display:unset;
+}
+.third-div{
+    background-color:rgb(207, 227, 235);
+}
+.gooenv{
+    font-size: large;
+    font-weight: 800;
+    color: brown;
+}
+.subtiltecard{
+    color: black;
+    font-size: medium;
+}
+.card{
+    box-shadow: 10px 10px  rgb(194, 181, 181);
+}
+.card:hover {
+    background-color: lightblue; 
+    box-shadow: none;
+  }
+  .fpptr{
+    background-color: aqua;
+    height: 50px;
+  }
+  .cards{
+   background-color: #f1f1f1;
+   padding: 6px;
+   border-radius: 5px;
+  }
+  .mainhead2{
+    color: black;
+    font-weight: 750;
+    font-size: large;
+  }
+  ion-card {
+    background-color: #f1f1f1;
+    height:180px;
+    width: 225px;
+   }
+  // .second-div{
+  //   background-color: wheat;
+  // }
+  .teacher-card{
+    // background-color: #f1f1f1;
+    // width: 30%;
+    border: 7px solid brown;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+    
+  }
+  .imagecard{
+    background-color: #f1f1f1;
+    border: 2px solid black;
+    padding: 5px;
+    margin: 5px;
+  }
+  .headtitle{
+    font-size: xx-large;
+    text-shadow: #b58181;
+    font-weight: 5 00;
+  }
+  .subotion{
+    font-size: larger;
+    text-align: center;
+    padding: 2px;
+  }
+  .subotion:hover{
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 5px;
+  
+  }
+  .footer-div{
+    background-color:black; 
+  }
+  .headtitle-n{
+    font-size: xx-large;
+    text-shadow: white;
+    font-weight: 5 00;
+  }
+  .bg {
+    background-image:
+        linear-gradient(to bottom, rgba(#0000, 0.8), rgba(#0000, 0.8)),
+        url('/assets/homepage/studeback.jpg');
+    // url('../../../assets/MainPage/mainbg.gif');
+    // url('../../../assets/MainPage/new.gif');
+    // background-position: center;
+    background-size:cover;
+    height: 100%;
+}
+.about-us{
+  background-color: #fff;
+}
+.teacher-card1{
+  // background-color: #f1f1f1;
+  // width: 30%;
+  border: 7px solid brown;
+  padding: 5px;
+  border-radius: 5px;
+ 
+  
+}
+.imagecard1{
+  background-color: #f1f1f1;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 5px;
+ 
+}
+.counttilte{
+  color: white;
+}
+.call{
+background-color: skyblue;
+border-radius: 20px;
+font-size: 10px;
+color: black;
+font-weight: 800;
+}

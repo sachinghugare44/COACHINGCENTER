@@ -1,0 +1,673 @@
+<ion-header style="background-color: #C4DFE6;" >
+  <ion-row>
+    <ion-col size="10" offset="1">
+      <div class="row">
+        <div class="col-5">
+          <div class="row">
+            <div class="col">
+              <ion-title class="headtitle">Excellent </ion-title>
+            </div>
+          </div>
+        </div>
+        <div class="col-7" style="text-align: right;">
+          <div class="row p-2">
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('home')">Home</ion-title>  </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('targetSection')" >Result</ion-title>
+            
+             </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('service')">Service</ion-title> </div>
+              <div class="col-2">
+                <ion-title class="subotion" (click)="scrollToSection1('about')">About us</ion-title> </div>
+            <div class="col-2">
+              <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
+               <ion-button fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content  (ionScroll)="onScroll($event)" scrollEvents="true">
+ 
+<div class="bg" id="home">
+<div class="row text-center">
+  <div class="col">
+    <br><br><br><br>  <br><br><br>
+   <ion-title class="maintitle">Excellent</ion-title>
+   <ion-text class="sub-title">AS Your Enducaaton Served more Action in Fiture</ion-text>
+  
+  </div>
+</div>
+<br><br> <br> <br>
+<ion-row>
+  <ion-col>
+
+    <div class="row p-2">
+      <div class="col">
+        <ion-row>
+          <ion-col size="10" offset="1">
+            <div class="row p-2" style=" border-radius: 8px; background-color: brown;">
+
+              <div class="col" style="text-align: center;">
+                <br>
+                <div class="row text-center">
+                  <div class="col">
+                    <h1 class="counttilte">Our Prescnece</h1>
+                  </div>
+                </div>
+              </div>
+    
+              <br><br>
+    
+              <div class="row p-2" style="margin: 5px;" #divSection>
+                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: center; border-right: 2px solid skyblue;">
+                  <span>
+                    <h4 class="counttilte" id="nbr"><b>{{ counters[0] }}+</b></h4>
+                    <h5 class="counttilte">Exam Pattern</h5>
+                  </span>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6" style="text-align: center; border-right: 2px solid skyblue;">
+                  <span>
+                    <h4 class="counttilte" id="nbr1"><b>{{ counters[1] }}+</b></h4>
+                    <h5 class="counttilte">Students Enrolled</h5>
+                  </span>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6" style="text-align: center; border-right: 2px solid skyblue;">
+                  <span>
+                    <h4 class="counttilte" id="nbr2"><b>{{ counters[2] }}+</b></h4>
+                    <h5 class="counttilte">Total Passed Student </h5>
+                  </span>
+                </div>
+    
+                <div class="col-lg-3 col-md-3 col-sm-6" style="text-align: center; ">
+                  <span>
+                    <h4 class="counttilte" id="nbr3"><b>{{ counters[3] }}+</b></h4>
+                    <h5 class="counttilte">90%+ Marks </h5>
+                  </span>
+                </div>
+    
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+       
+      </div>
+
+    </div>
+
+  </ion-col>
+</ion-row>
+</div>
+
+<br><br><br> <br><br>
+<ion-row>
+  <ion-col size="10" offset="1.5">
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+        <div class="row">
+          <div class="col">
+            <h1>Excellenxt</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3><b>Online Education Learning hsjhsjhs.</b></h3></div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <ion-text style="text-align: left;">
+              Accusamus et iusidio dignissimos  ducimus blanditiis praesentium voluptatum
+               deleniti atque corrupti quos dolores etmquasa
+               molestias epturi sint occaecati cupiditate non providente mikume molareshe.
+            </ion-text>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+        <img height="200px" src="assets/homepage/teacjer.png">
+        <img height="200px" src="assets/homepage/student.png">
+        <img height="200px" src="assets/homepage/girlstudent.png">
+      </div>
+     
+      
+    </div>
+  </ion-col>
+</ion-row>
+    <br><br><br>
+    <div  id="targetSection">
+    <div class="third-div">
+    <ion-row>
+      <ion-col size="10" offset="2">
+        <br><br><br>
+        <div class="row">
+          <div class="col-3">
+            <div class="row">
+              <div class="col">
+                <h2>Why</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h2>Excellent For You?</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <ion-text>There are many variations of passa of Lorem Ipsum available, but the majority have suffered.</ion-text>
+              </div>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col-4">
+                <div class="card">
+                  <!-- <img src="assets/homepage/pro.svg"> -->
+                  <div class="row text-center p-2">
+                    <div class="col">
+                    <ion-title class="gooenv">Proven Results</ion-title>
+                    </div>
+                  </div>
+                 
+                  <div class="row p-2">
+                    <div class="col">
+                      <ion-text class="subtiltecard">It ispucioyurd sd osny  yt dhd l ggjdfjd l thta to good time tho show</ion-text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card">
+                  <div class="row text-center p-2">
+                    <div class="col">
+                    <ion-title class="gooenv">Learning Tools</ion-title>
+                    </div>
+                  </div>
+                 
+                  <div class="row p-2">
+                    <div class="col">
+                      <ion-text class="subtiltecard">It ispucioyurd sd osny  yt dhd l ggjdfjd l thta to good time tho show</ion-text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card" >
+                  <div class="row text-center p-2">
+                    <div class="col">
+                    <ion-title class="gooenv">Mentor Support</ion-title>
+                    </div>
+                  </div>
+                 
+                  <div class="row p-2">
+                    <div class="col">
+                      <ion-text class="subtiltecard">It ispucioyurd sd osny  yt dhd l ggjdfjd l thta to good time tho show</ion-text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <br><br><br>
+
+      </ion-col>
+    </ion-row>
+  
+     
+    </div>
+  </div>
+    <br><br><br>
+    <div class="row text-center">
+      <div class="col">
+        <h1>Our Pride Facalty</h1>
+      </div>
+    </div>
+    <br>
+    <div class="second-div">
+      <ion-row>
+        <ion-col size="10" offset="1.5">
+          <div class="row">
+           <div class="col-3">
+            <div class="row">
+              <div class="col">
+                <div class="teacher-card">
+                  <div class="imagecard p-2">
+                    <img  src="assets/homepage/student.png">
+                  </div>
+                 
+                  <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small;">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center;">B.E Compiter</p>
+                </div>
+              </div>
+            </div>
+           </div>
+           <div class="col-3">
+            <div class="row">
+              <div class="col">
+                <div class="teacher-card">
+                  <div class="imagecard p-2">
+                    <img  src="assets/homepage/student.png">
+                  </div>
+                 
+                  <ion-title style="text-align: center; padding: 3px; font-weight: 900;  font-size: small">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center;">B.E Compiter</p>
+                </div>
+              </div>
+            </div>
+           </div> 
+           <div class="col-3">
+            <div class="row">
+              <div class="col">
+                <div class="teacher-card">
+                  <div class="imagecard p-2">
+                    <img  src="assets/homepage/student.png">
+                  </div>
+                 
+                  <ion-title style="text-align: center; padding: 3px; font-weight: 900;  font-size: small">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center;">B.E Compiter</p>
+                </div>
+              </div>
+            </div>
+           </div>
+            <div class="col-3">
+            <div class="row">
+              <div class="col">
+                <div class="teacher-card">
+                  <div class="imagecard p-2">
+                    <img  src="assets/homepage/student.png">
+                  </div>
+                 
+                  <ion-title style="text-align: center; padding: 3px; font-weight: 900;  font-size: small">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center;">B.E Compiter</p>
+                </div>
+              </div>
+            </div>
+           </div>
+          
+        </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    
+
+    <br><br><br>
+    <div id="about">
+    <div class="row text-center">
+      <div class="col">
+        <h1>About Us.... </h1>
+      </div>
+    </div>
+   
+   
+    <div class="about-us">
+      <ion-row>
+        <ion-col size="11" offset="1">
+          <div class="row p-2">
+            <div class="col-1"></div>
+            <div class="col-4">
+              <br>
+              <div class="row">
+                <div class="col">
+                  <ion-text style="color:black; font-size:medium"> Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit. Aspernatur aliquid, itaque fugiat
+                     est tenetur magni, labore quasi quod soluta accusamus, 
+                    corporis laborum! Similique molestias facere et id sapiente in tempora 
+                    . Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Iste sed consequuntur corporis quo magnam consectetur blanditiis a
+                     quia odit repudiandae adipisci officia aspernatur perferendis eveniet
+                      omnis non dolore, impedit sunt?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                     vel ipsam perspiciatis placeat, maiores officia, provident sit 
+                     exercitationem laudantium voluptatibus voluptas? Possimus,
+                     fugiat praesentium! Iure velit nulla doloribus dolore reiciendis.</ion-text>
+                </div>
+              </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5">
+              <img height="350px" src="assets/homepage/teacjer.png">
+            </div>
+            <!-- <div class="col-1"></div> -->
+          </div>
+        </ion-col>
+      </ion-row>
+     
+    </div>
+    </div>
+     <br><br><br>
+<ion-row>
+  <ion-col size="10" offset="1">
+    <div class="row text-center">
+      <div class="col">
+        <h1>What Our Students Have to Say</h1>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-4">
+        <div class="cards p-2">
+          <div class="row">
+            <div class="col">
+              <ion-text class="subtiltecard">Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
+
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-3">
+              <img  height="60px" src="assets/homepage/girlstudent.png">
+            </div>
+            <div class="col-5">
+              <ion-title class="mainhead2">Sachin</ion-title>
+              <p>Pune , Mharashta</p>
+              <!-- <div class="col-3"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-4">
+        <div class="cards">
+          <div class="row">
+            <div class="col">
+              <ion-text class="subtiltecard">Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
+
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-3">
+              <img  height="60px" src="assets/homepage/girlstudent.png">
+            </div>
+            <div class="col-5">
+              <ion-title class="mainhead2">Sachin</ion-title>
+              <p>Pune , Mharashta</p>
+              <!-- <div class="col-3"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-4">
+        <div class="cards">
+          <div class="row">
+            <div class="col">
+              <ion-text class="subtiltecard">Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
+
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-3">
+              <img  height="60px" src="assets/homepage/girlstudent.png">
+            </div>
+            <div class="col-5">
+              <ion-title class="mainhead2">Sachin</ion-title>
+              <p>Pune , Mharashta</p>
+              <!-- <div class="col-3"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-4">
+        <div class="cards">
+          <div class="row">
+            <div class="col">
+              <ion-text>Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
+
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-3">
+              <img  height="60px" src="assets/homepage/girlstudent.png">
+            </div>
+            <div class="col-5">
+              <ion-title>Sachin</ion-title>
+              <p>Pune , Mharashta</p>
+              <!-- <div class="col-3"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+    <br><br><br>
+    <div class="row text-center">
+      <div class="col">
+        <h1>Our Memerioeses</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-3">
+        <ion-card>
+          <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+          </div>
+      <img src="assets/homepage/student.png">
+        </ion-card>
+        </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+        </ion-card>
+      </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+          </ion-card>
+        </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+           
+          </ion-card>
+        </div> 
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-3">
+        <ion-card>
+          <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+          </div>
+      <img src="assets/homepage/student.png">
+        </ion-card>
+        </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+        </ion-card>
+      </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+          </ion-card>
+        </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+           
+          </ion-card>
+        </div> 
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-3">
+        <ion-card>
+          <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+          </div>
+      <img src="assets/homepage/girlstudent.png">
+        </ion-card>
+        </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+        </ion-card>
+      </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+          </ion-card>
+        </div>
+        <div class="col-3">
+          <ion-card>
+            <div style="background-color:aquamarine; height: 20px; width: 100%;">
+              
+            </div>
+            <img src="assets/homepage/student.png">
+           
+          </ion-card>
+        </div> 
+    </div>
+  </ion-col>
+ 
+</ion-row>
+   <br><br><br>
+
+<div class="footer-div p-2">
+<div class="container p-4 pb-0">
+  <!-- Section: Links -->
+  <section class="">
+  <!--Grid row-->
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 style="color: white;" class="headtitle-n mb-4 font-weight-bold">
+       Excellent
+      </h6>
+    <hr style="color: white;">
+      <p style="color: white;">
+        Here you can use rows and columns to organize your footer
+        content. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit.
+      </p>
+    </div>
+    <!-- Grid column -->
+  
+    <hr class="w-100 clearfix d-md-none" />
+  
+    <!-- Grid column -->
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Company</h6>
+      <p>
+        <a class="text-white">Home </a>
+      </p>
+      <p>
+        <a class="text-white">Service</a>
+      </p>
+      <p>
+        <a class="text-white">About Us</a>
+      </p>
+      <p>
+        <a class="text-white">Contact Us</a>
+      </p>
+    </div>
+    <!-- Grid column -->
+  
+    <hr class="w-100 clearfix d-md-none" />
+  
+    <!-- Grid column -->
+    <hr class="w-100 clearfix d-md-none" />
+  
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h6 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+      <p  style="color: white;"><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+      <p  style="color: white;"><i class="fas fa-envelope mr-3"></i> info  .com</p>
+      <p  style="color: white;"><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+      <p  style="color: white;"><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h6 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+     <div class="row">
+      <div class="col-3">
+        <ion-icon style="color: antiquewhite; font-size: x-large;" name="logo-whatsapp"></ion-icon>
+
+      </div>
+      <div class="col-3">
+        <ion-icon style="color: antiquewhite; font-size: x-large" name="logo-youtube"></ion-icon>
+
+      </div>
+      <div class="col-3">
+        <ion-icon style="color: antiquewhite; font-size: x-large" name="logo-facebook"></ion-icon>
+
+      </div>
+      <div class="col-3">
+        <ion-icon style="color: antiquewhite; font-size: x-large" name="logo-instagram"></ion-icon>
+      </div>
+     </div>
+    </div>
+  </div>
+  <!--Grid row-->
+  </section>
+  <!-- Section: Links -->
+  </div>
+  <br>
+</div>
+<div
+ class="text-center p-3"
+ style="background-color: wheat"
+ >
+© 2020 Copyright:
+<a class="text-black" href="https://mdbootstrap.com/"
+ >MDBootstrap.com</a
+>
+</div>
+
+
+
+
+
+
+
+<ion-fab slot="fixed" horizontal="right" vertical="bottom">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>
