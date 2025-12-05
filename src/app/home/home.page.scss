@@ -585,12 +585,12 @@ color:white;
   box-shadow: var(--shadow);
 }
 
-.memories-grid {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
+// .memories-grid {
+//   margin-top: 2rem;
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: 1.5rem;
+// }
 
 .memory-card {
   background: #f8fafc;

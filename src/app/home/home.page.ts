@@ -372,6 +372,34 @@ memories:Memory[] = [
       title: 'Workshop Session',
       date: '2024',
       description: 'Interactive learning workshops'
+    },
+    {
+      id: 9,
+      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80',
+      title: 'Farewell Party',
+      date: '2023',
+      description: 'Celebrating graduating students'
+    },
+    {
+      id: 10,
+      imageUrl: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=500&q=80',
+      title: 'Independence Day',
+      date: '2023',
+      description: 'Patriotic celebrations at school'
+    },
+    {
+      id: 11,
+      imageUrl: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=500&q=80',
+      title: 'Diwali Celebration',
+      date: '2023',
+      description: 'Festival of lights with students'
+    },
+    {
+      id: 12,
+      imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80',
+      title: 'Workshop Session',
+      date: '2024',
+      description: 'Interactive learning workshops'
     }
   ];
 }

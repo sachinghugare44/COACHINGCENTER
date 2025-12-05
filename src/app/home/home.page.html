@@ -321,6 +321,7 @@
             </div>
           </div>
           <!-- <br> -->
+           <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
           <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
             <br>
             <div class="row">
@@ -398,7 +399,7 @@
    
     <br><br><br>
     <ion-row >
-      <ion-col size="10" offset="0.5">
+      <ion-col size="11" offset="0.5">
      <section class="content-card" id="courses">
     <div class="section-image">
       <img style="width: 90%; height: 90%; border-radius: 24px;" src="assets/homepage/Imagessss.jpeg" alt="Teacher explaining lesson">
@@ -517,7 +518,7 @@
     <br>
     <div class="second-div">
       <ion-row>
-        <ion-col size="10" offset="1.5">
+        <ion-col size="10" offset="1">
           <div class="row">
            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
             <div class="row">
@@ -701,11 +702,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
       <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
         <div class="cards p-2">
-          <div class="row">
-            <div class="col">
-               <!-- <img height="50px" style="background:none;position:absolute; bottom:20px;"  src="assets/homepage/doublecot.png"> -->
-            </div>
-          </div>
+        
           <div class="row text-center">
             <div class="col">
               <ion-text class="subtiltecard">
@@ -812,95 +809,31 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
     </div>
     <br><br><br>
     
-    <!-- <br>
-    <div class="row">
-      <div class="col-3">
-        <ion-card>
-          <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-          </div>
-      <img src="assets/homepage/student.png">
-        </ion-card>
-        </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-        </ion-card>
-      </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-          </ion-card>
-        </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-           
-          </ion-card>
-        </div> 
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-3">
-        <ion-card>
-          <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-          </div>
-      <img src="assets/homepage/girlstudent.png">
-        </ion-card>
-        </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-        </ion-card>
-      </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-          </ion-card>
-        </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-           
-          </ion-card>
-        </div> 
-    </div> -->
+    
   </ion-col>
-  <ion-row>
-    <ion-col size="11" offset="1">
+  
+ 
+ 
+</ion-row>
+   <!-- <br><br><br> -->
+<ion-row>
+    <ion-col size="11" offset="0.5">
        <div class="row text-center">
       <div class="col">
-        <h1>Our Memories</h1>
+        <h1 style="color: #1565C0;">Our Memories</h1>
       </div>
+    </div>
+     <div class="section-head text-center">
+      <p>Relive the wonderful events, celebrations, and joyful moments we've shared together at Leelavati Classes.</p>
     </div>
     <br>
     <section class="memories" id="memories" #memoriesSection>
-    <div class="section-head">
-      <ion-badge color="primary">Our Memories</ion-badge>
-      <h2>Cherished Moments</h2>
-      <p>Relive the wonderful events, celebrations, and joyful moments we've shared together at Leelavati Classes.</p>
-    </div>
-    <div class="memories-grid">
-      <div class="memory-card" *ngFor="let memory of memories">
+   
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12" *ngFor="let memory of memories">
+    <!-- <div class="memories-grid"> -->
+      
+      <div class="memory-card" >
         <div class="memory-image">
           <img [src]="memory.imageUrl" [alt]="memory.title" loading="lazy">
           <div class="memory-content">
@@ -909,16 +842,17 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
             <p class="memory-desc" *ngIf="memory.description">{{ memory.description }}</p>
           </div>
         </div>
+     
       </div>
+      <br><b></b>
     </div>
+    </div>
+    
+      <!-- </div> -->
   </section>
     </ion-col>
   </ion-row>
- 
- 
-</ion-row>
    <br><br><br>
-
 <div class="footer-div p-2">
 <div class="container p-4 pb-0">
   <!-- Section: Links -->
