@@ -1,65 +1,207 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { IonHeader, IonToolbar, IonContent, IonTitle, IonText, IonRow, IonCol, IonFooter, IonCard, IonIcon, IonButton, IonFab, IonFabButton } from "@ionic/angular/standalone";
+import { Router } from '@angular/router';
+import { Network } from '@capacitor/network';
+import { IonHeader, IonToolbar, IonContent, IonTitle, IonText, IonRow, IonCol, IonFooter, IonCard, IonIcon, IonButton, IonFab, IonFabButton, IonLabel, IonItem, IonList, IonBadge, IonMenuButton, IonButtons, IonInput, IonSelectOption, IonTextarea, IonSelect } from "@ionic/angular/standalone";
 import { interval, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import {Swiper} from 'swiper';
+import { HambergerMenuComponent } from '../hamberger-menu/hamberger-menu.component';
+import { MenuController, ToastController, IonicModule } from '@ionic/angular';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import Swiper from 'swiper';
 
+interface Memory {
+  id: number;
+  imageUrl: string;
+  title: string;
+  date?: string;
+  description?: string;
+}
 @Component({
+  standalone: true,
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  standalone: true,
-  imports: [IonFabButton, IonFab, IonButton, IonIcon, IonCard, IonFooter, IonCol, IonRow, IonText, IonTitle, IonContent, IonToolbar, IonHeader]
+  imports: [IonicModule,FormsModule,
+    ReactiveFormsModule,CommonModule]
+  // imports: [ReactiveFormsModule,IonicModule,
+  //   CommonModule, FormsModule]
 })
 export class HomePage implements OnInit {
+  
 
+
+  API_URL = "https://script.google.com/macros/s/AKfycbxnTaRKVDmkrjT2qRwQYCS91r3OOkFEtaK99wC4aF25xdcajAIBOKOz_R_d5OOd7gDy/exec";
+
+
+  @ViewChild('swiper')
+  swiperRef: ElementRef | undefined;
+  swiper?: Swiper;
+ 
+  // view selected img swiper
+  viewSelectedImage(index:number) {
+    this.swiper?.slideTo(index);
+  }
+ 
+  swiperSlideChanged(e: any) { }
+ 
+  swiperReady() {
+    this.swiper = this.swiperRef?.nativeElement.swiper;
+  }
   // @ViewChild('swiper')
   // swiperRef: ElementRef | undefined;
   // swiper?: Swiper;
- 
-  // // view selected img swiper
-  // viewSelectedImage(index:number) {
+
+  // viewSelectedImage(index: number) {
   //   this.swiper?.slideTo(index);
   // }
- 
-  // swiperSlideChanged(e: any) { }
- 
+
+  // swiperSlideChanged(e: any) {}
+
   // swiperReady() {
   //   this.swiper = this.swiperRef?.nativeElement.swiper;
   // }
- 
+
+  // goNext() {
+  //   this.swiper?.slideNext();
+  // }
+
+  // goPrev() {
+  //   this.swiper?.slidePrev();
+  // }
+
   private speed = 50;
   counters = [0, 4600, 1700, 900];
   endNbr = [20, 4737, 1799, 934];
  
-  @ViewChild('divSection', { static: true })
-  divSection!: ElementRef;
-  private observer!: IntersectionObserver;
-  constructor(private http:HttpClient) { }
+  @ViewChild('divSection', { static: false }) divSection!: ElementRef;
+
+  enquiryForm:any;
+
+
+
+
+
+
+  
+  feedbackForm: any;
+  // divSection!: ElementRef;
+   observer!: IntersectionObserver;
+
+
+
+  constructor(private fb:FormBuilder,private toast:ToastController,private http:HttpClient,private route:Router, private menuCtrl:MenuController) { 
+     this.feedbackForm = this.fb.group({
+    name: ['', Validators.required],
+      mobile: ['', [Validators.required, Validators.minLength(10)]],
+      course: ['', Validators.required],
+       message: ['']
+    });
+//  this.enquiryForm=this.fb.group({
+// name: ['', Validators.required],
+//       mobile: ['', [Validators.required, Validators.minLength(10)]],
+//       // course: ['', Validators.required],
+//       message: ['']
+//  });
+  }
 private baseUrl = environment.apiUrl
+isOnline:any
   ngOnInit() {
+ const target = this.divSection?.nativeElement;
+
+  if (target) {
     this.observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         this.animateCounters();
-        this.observer.disconnect(); // Stop observing once triggered
+        this.observer.disconnect();
       }
     });
 
-    this.observer.observe(this.divSection.nativeElement);
-    this.createUser();
-  }arradydata:any
-
-  createUser(): Observable<any> {
-    debugger
-    return this.http.get(`${this.baseUrl}/api/ipltimetablecontoller/getAlltimetable`).pipe(
-    tap(data => {
-      console.log('Fetched Users from API:', data);
-    })
-  ); ``
-  
-   
+    this.observer.observe(target);
+  } else {
+    console.error("divSection element not found!");
   }
+
+
+  // ⭐ SLIDE-IN ANIMATION 1
+  const elements = document.querySelectorAll('.slide-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  elements.forEach(el => observer.observe(el));
+
+
+  // ⭐ SLIDE-IN ANIMATION 2
+  const elements1 = document.querySelectorAll('.aslide-in');
+
+  const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer1.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  elements1.forEach(el => observer1.observe(el));
+
+  }
+  
+  ngAfterViewInit() {
+    const target = this.divSection?.nativeElement;
+
+  if (target) {
+    this.observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.animateCounters();
+        this.observer.disconnect();
+      }
+    });
+
+    this.observer.observe(target);
+  } else {
+    console.error("divSection element not found!");
+  }
+
+
+  // ⭐ SLIDE-IN ANIMATION 1
+  const elements = document.querySelectorAll('.slide-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  elements.forEach(el => observer.observe(el));
+
+
+  // ⭐ SLIDE-IN ANIMATION 2
+  const elements1 = document.querySelectorAll('.aslide-in');
+
+  const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer1.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  elements1.forEach(el => observer1.observe(el));
+
+}
  animateCounters() {
     const interval$ = interval(this.speed);
 
@@ -69,35 +211,16 @@ private baseUrl = environment.apiUrl
       });
     });
   }
-
-  
-
-   scrollToSection(section: string): void {
-    const sections: string[] = ["service", "about", "contact"];
-    console.log(section)
-    
-    const nextSectionIndex = sections.indexOf(section) + 1;
-    if (nextSectionIndex < sections.length) {
-      const nextSection = document.getElementById(sections[nextSectionIndex]);
-      if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        console.error(`Section with id '${sections[nextSectionIndex]}' not found`);
-      }
-    } else {
-      console.log("No next section available");
-    }
-  }
-  
-
-  scrollToSection1(sectionId: string): void {
+onclickresult(){
+  this.route.navigate([('/results')])
+}
+scrollToSection1(sectionId: string): void {
     console.log(sectionId)
   const element = document.getElementById(sectionId);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
-
 // @HostListener('window:scroll', [])
 //   onScroll(): void {
 //     const scrollPosition = window.innerHeight + window.scrollY;
@@ -125,12 +248,131 @@ private baseUrl = environment.apiUrl
     // console.log(this.isBottomReached)
     const scrollPosition = window.innerHeight + window.scrollY;
         const pageHeight = document.documentElement.scrollHeight;
-        console.log(scrollPosition)
-        console.log(pageHeight)
+        // console.log(scrollPosition)
+        // console.log(pageHeight)
         if (scrollPosition >= pageHeight) {
-          console.log('You have reached the bottom of the page!');
+          // console.log('You have reached the bottom of the page!');
           // Add your logic here when the user reaches the bottom
         }
   }
+phoneNumber = '8888388625';
+  callPhoneNumber() {
+    window.location.href = `tel:${this.phoneNumber}`;
+  }
+  // ONCLICKGOHOME(){
+  //   this.route.navigate(['/home'])
+  // }
+//    submitFeedback() {
+//     const data = {
+//       name: this.feedbackForm.value.name,
+//       mobile: this.feedbackForm.value.mobile,
+//       course: this.feedbackForm.value.course,
+//       message: this.feedbackForm.value.message
+//     };
+// console.log(data)
+//     // this.http.post(this.API_URL, data).subscribe(async (res:any) => {
+//     //   let t = await this.toast.create({
+//     //     message: "Inquiry Saved Successfully!",
+//     //     duration: 2000,
+//     //     color: 'success'
+//     //   });
+//     //   t.present();
+//     //   // this.name = this.mobile = this.course = this.message = "";
+//     // });
+//   }
+
+  // submitFeedback() {
+    
+  //   if (this.feedbackForm.valid) {
+  //     fetch(this.API_URL, {
+  //       method: 'POST',
+  //       body: JSON.stringify(this.feedbackForm.value),
+  //     })
+  //       .then(response => response.json())
+  //       .then(result => {
+  //         alert("Enquiry Submitted Successfully 🎉");
+  //         this.enquiryForm.reset();
+  //       })
+  //       .catch(err => console.error(err));
+  //   }
+  // }
+
+  submitFeedback() {
+  const body = new URLSearchParams();
+  body.append('name', this.feedbackForm.value.name);
+  body.append('mobile', this.feedbackForm.value.mobile);
+  body.append('course', this.feedbackForm.value.course);
+ body.append('message', this.feedbackForm.value.message);
+  fetch(this.API_URL, {
+    method: 'POST',
+    body // browser sets Content-Type to application/x-www-form-urlencoded
+    // do NOT set custom headers like Content-Type: application/json (that triggers preflight)
+  })
+  .then(res => res.json())
+  .then(res => {
+    console.log('success', res);
+    this.feedbackForm.reset();
+  })
+  .catch(err => console.error('submit error', err));
+}
+
+memories:Memory[] = [
+    {  
+      id: 1,
+      imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80',
+      title: 'Annual Day Celebration',
+      date: '2024',
+      description: 'Students performing cultural programs'
+    },
+    {
+      id: 2,
+      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80',
+      title: 'Science Exhibition',
+      date: '2024',
+      description: 'Innovative projects by our students'
+    },
+    {
+      id: 3,
+      imageUrl: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=500&q=80',
+      title: 'Field Trip',
+      date: '2023',
+      description: 'Educational visit to historical places'
+    },
+    {
+      id: 4,
+      imageUrl: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=500&q=80',
+      title: 'Teachers Day',
+      date: '2023',
+      description: 'Students honoring their teachers'
+    },
+    {
+      id: 5,
+      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80',
+      title: 'Farewell Party',
+      date: '2023',
+      description: 'Celebrating graduating students'
+    },
+    {
+      id: 6,
+      imageUrl: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=500&q=80',
+      title: 'Independence Day',
+      date: '2023',
+      description: 'Patriotic celebrations at school'
+    },
+    {
+      id: 7,
+      imageUrl: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=500&q=80',
+      title: 'Diwali Celebration',
+      date: '2023',
+      description: 'Festival of lights with students'
+    },
+    {
+      id: 8,
+      imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80',
+      title: 'Workshop Session',
+      date: '2024',
+      description: 'Interactive learning workshops'
+    }
+  ];
 }
 

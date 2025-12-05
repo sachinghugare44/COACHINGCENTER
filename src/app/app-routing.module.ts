@@ -7,17 +7,30 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+   {
+    path: 'results',
+    loadChildren: () => import('./results/results.module').then( m => m.ResultsPageModule)
+  },
+   {
+    path: 'kaalal',
+    loadChildren: () => import('./kaalal/kaalal-routing.module').then( m => m.KaalalPageRoutingModule)
+  },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     // canLoad:[AuthguardService]
 
-  }
+  },
+  {
+    path: 'kaalal',
+    loadChildren: () => import('./kaalal/kaalal-routing.module').then( m => m.KaalalPageRoutingModule)
+  },
+ 
 
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   exports: [RouterModule]
 })

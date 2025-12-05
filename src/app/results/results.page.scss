@@ -1,0 +1,238 @@
+body {
+  background: #F8FBFF;
+  color: #333333;
+}
+.main-div{
+background-color:crimson;
+height: 300px;
+}
+.maintitle{
+    color: white;
+    font-size: 78px;
+    font-weight: 900;
+
+}
+.sub-title{
+    color: white;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-display:unset;
+}
+.third-div{
+    background-color:rgb(207, 227, 235);
+}
+.gooenv{
+    font-size: large;
+    font-weight: 800;
+    color: brown;
+}
+.subtiltecard{
+    color: black;
+    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+}
+.card{
+    box-shadow: 10px 10px  rgb(194, 181, 181);
+}
+.card:hover {
+    background-color: lightblue; 
+    box-shadow: none;
+  }
+  .fpptr{
+    background-color: aqua;
+    height: 50px;
+  }
+  .cards{
+   background-color: #f1f1f1;
+   padding: 6px;
+  //  border-radius: 50px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  }
+  .mainhead2{
+    color: black;
+    font-weight: 750;
+    font-size: large;
+  }
+  .result-div{
+    background-color: #F8FBFF;
+  }
+  .resulcard{
+  //  box-shadow: 10px 10px  #fff;
+  border-top-left-radius: 8px;
+  }
+  .main-bg{
+    background-color: #f1f1f1 ;
+  }
+  ion-card {
+    background-color: #f1f1f1;
+    height:200px;
+    width: 280px;
+   }
+  // .second-div{
+  //   background-color: wheat;
+  // }
+  .teacher-card{
+    // background-color: #f1f1f1;
+    // width: 30%;
+    border: 1px solid black;
+    padding: 5px;
+    // border-radius: 12px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 80%;
+    
+  }
+  .imagecard{
+    background-color: #f1f1f1;
+    // border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 150px;
+  }
+  .headtitle{
+    font-size: xx-large;
+    text-shadow: #b58181;
+    font-weight: 5 00;
+  }
+  .subotion{
+    font-size: larger;
+    text-align: center;
+    padding: 2px;
+    color: #F8FBFF;
+  }
+  .subotion:hover{
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 5px;
+  color: black;
+  }
+  .footer-div{
+    background-color:#0B3A82; 
+    color: #DCE6F9;
+  padding: 40px 0;
+  }
+  .headtitle-n{
+    font-size: xx-large;
+    text-shadow: white;
+    font-weight: 5 00;
+  }
+  .bg {
+    background-image:
+        linear-gradient(to bottom, rgba(#0000, 0.8), rgba(#0000, 0.8)),
+        url('/assets/homepage/studeback.jpg');
+    // url('../../../assets/MainPage/mainbg.gif');
+    // url('../../../assets/MainPage/new.gif');
+    // background-position: center;
+    background-size:cover;
+    height: 100%;
+}
+.about-us{
+  background-color: #fff;
+}
+.teacher-card1{
+  // background-color: #f1f1f1;
+  // width: 30%;
+  border: 7px solid brown;
+  padding: 5px;
+  border-radius: 5px;
+ 
+  
+}
+.imagecard1{
+  background-color: #f1f1f1;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 5px;
+ 
+}
+.counttilte{
+  color: white;
+}
+.call{
+background-color: #FFC107;
+border-radius: 5px;
+font-size: 10px;
+color: #0D47A1;
+font-weight: 800;
+color:white;
+}
+.cardlocation{
+  // border: 2px solid black;
+  margin:1px;
+}
+.cardadd{
+  border:1px solid black;
+}
+.caafull{
+  background-color: #f1f1f1;
+   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.largedisplay {
+  display: block;
+}
+.smalldisplay {
+  display: none;
+}
+  .sub-title {
+      display: inline-block;
+     
+   animation: zoomIn 9s ease-in-out infinite;
+      transition: transform 0.9
+      s ease;
+    }
+
+    .sub-title:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes zoomIn {
+       0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+@media (max-width: 1024px) and (min-width: 768px) {
+   .largedisplay{
+    display:block;
+  }
+  .smalldisplay{
+    display:none;
+  }
+ 
+
+}
+
+/* Small screens (mobile, below 768px) */
+@media (max-width: 767px) {
+  .smalldisplay{
+    display:block;
+  }
+   .largedisplay{
+    display:none;
+  }
+  .sub-title{
+    color: white;
+    font-size: smaller;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-display:unset;
+}
+.smallcard{
+  height: 85px;
+  width: 130px;
+  // border: 4px solid red;
+  color: white;
+  background-color:crimson ;
+  // margin:5px
+  border-radius: 5px;
+  // font-size: 1px;
+}
+}

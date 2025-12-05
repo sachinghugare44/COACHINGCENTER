@@ -1,0 +1,283 @@
+<!-- <app-hamberger-menu></app-hamberger-menu> -->
+<ion-header  class="largedisplay" style="background-color: #0D47A1;" >
+<div>
+   <ion-row>
+    <ion-col size="10" offset="1">
+      <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6">
+          <div class="row">
+            <div class="col p-1">
+              <img (click)="scrollToSection1('home')" height="53px" src="assets/homepage/lawatinewl3.png">
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6" style="text-align: right;">
+          <div class="row p-2">
+            <div class="col-2">
+              <ion-title class="subotion" (click)="onclickresulthome()">Home</ion-title>  </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="onclickresult()" >Result</ion-title>
+            
+             </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('service')">Service</ion-title> </div>
+              <div class="col-2">
+                <ion-title class="subotion" (click)="scrollToSection1('about')">About us</ion-title> </div>
+            <div class="col-2">
+              <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
+               <ion-button (click)="callPhoneNumber()" fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </ion-col>
+  </ion-row>
+</div>
+
+</ion-header>
+
+<ion-header  class="smalldisplay" style="background-color: #0D47A1;" >
+<div>
+ 
+   <ion-row>
+    <ion-col size="10" offset="1">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col p-2">
+              <img height="30px" src="assets/homepage/lawatinewl3.png">
+            </div>
+          </div>
+        </div>
+       <div class="col-4"></div>
+        <div class="col-2" >
+          <!-- <ion-button (click)="callPhoneNumber()" fill="clear" class="call" >Call Now   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button> -->
+            <!-- <ion-buttons slot="start" style="color:#F8FBFF">
+      <ion-menu-button menu="mainMenu" autoHide="false"></ion-menu-button>
+    </ion-buttons> -->
+    
+   <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+         </div>
+
+        <!-- <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6" style="text-align: right;">
+          <div class="row p-2">
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('home')">Home</ion-title>  </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('targetSection')" >Result</ion-title>
+            
+             </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('service')">Service</ion-title> </div>
+              <div class="col-2">
+                <ion-title class="subotion" (click)="scrollToSection1('about')">About us</ion-title> </div>
+            <div class="col-2">
+               <ion-button fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    
+    </ion-col>
+  </ion-row>
+</div>
+
+</ion-header>
+<ion-content   (ionScroll)="onScroll($event)" scrollEvents="true">
+   <div class="result-div" id="home">
+    <br>
+  <ion-row >
+    <ion-col size="10" offset="1">
+      <div class="row text-center">
+       
+        <div class="col">
+          
+         <ion-title style="color:#1565C0; font-size: 45px;  font-weight: 800;">Our Proud Achievers
+</ion-title>
+         <span style="color:#b58181 ;background-color:#F8FBFF;"> </span>
+          </div>
+        </div>
+      
+    </ion-col>
+  </ion-row>
+  <br>
+  <div class="row text-center">
+    <div class="col">
+     
+            <ion-text style="color:black; font-size: medium;"> We've consistently produced outstanding results, with many students achieving top scores in their exams. Here's a glimpse of our achievements from the past 4 years:
+</ion-text>
+          
+    </div>
+  </div>
+  <br>
+  </div>
+  
+  <div class="main-bg">
+    <br><br><br>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <div class="row text-center">
+          <div class="col">
+            <h3 style="color: #1E88E5; font-weight: bolder;">ACHIVEVER STAR OF LEELAWATI'S</h3>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+            <div class="resulcard">
+ <img style="border-radius: 10px;" width="100%" src="assets/resultspage/ssc-2025s.jpg">
+              </div>
+              <br>
+          </div>
+         
+           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+            <div class="resulcard">
+ <img style="border-radius: 10px;" width="100%"  src="assets/resultspage/scc-20222s.jpg">
+              </div>
+              <br>
+          </div>
+          <div class="col-1"></div>
+           <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div class="resulcard">
+ <img  style="border-radius: 10px;" src="assets/resultspage/ssc-2025.jpg">
+ </div>
+ <br>
+          </div> -->
+          
+        </div>
+
+        <br><br>
+         <div class="row text-center">
+          <div class="col">
+            <h3 style="color: #1E88E5;font-weight: bolder;">100%'s RESULT ACHIEVERS</h3>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+            <div class="resulcard">
+ <img style="border-radius: 10px;" src="assets/resultspage/ssc-full-2025n.jpg">
+              </div>
+              <br>
+          </div>
+         
+           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+            <div class="resulcard">
+ <img style="border-radius: 10px;"  src="assets/resultspage/ssc-full2025N.jpg">
+              </div>
+              <br>
+          </div>
+          <div class="col-1"></div>
+           <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div class="resulcard">
+ <img  style="border-radius: 10px;" src="assets/resultspage/ssc-2025.jpg">
+ </div>
+ <br>
+          </div> -->
+          
+        </div>
+        
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="footer-div p-2">
+<div class="container p-4 pb-0">
+  <!-- Section: Links -->
+  <section class="">
+  <!--Grid row-->
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+      <img height="50px" src="assets/homepage/lawatinewl3.png">
+    <hr style="color: white;">
+      <p style="color:#F8FBFF;">
+        Here you can use rows and columns to organize your footer
+        content. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit.
+      </p>
+    </div>
+    
+  
+    <hr class="w-100 clearfix d-md-none" />
+  
+   
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h5 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Company</h5>
+      <p>
+        <a class="text-white" (click)="scrollToSection1('home')">Home </a>
+      </p>
+      <p>
+        <a class="text-white" (click)="scrollToSection1('targetSection')">Result</a>
+      </p>
+      <p>
+        <a class="text-white" (click)="scrollToSection1('service')">Service</a>
+      </p>
+      <p>
+        <a class="text-white" (click)="scrollToSection1('about')">Contact Us</a>
+      </p>
+    </div>
+    <!-- Grid column -->
+  
+    <hr class="w-100 clearfix d-md-none" />
+  
+    <!-- Grid column -->
+    <hr class="w-100 clearfix d-md-none" />
+  
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+      <h5 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Contact</h5>
+      <p  style="color: white;"><i class="fas fa-home mr-3"></i><ion-icon name="location-outline"></ion-icon>Leelavati classes Salisbury park, opp Mahaveer
+      Pratishthan School ,Next to Rohan Apartment,Near Maharashi Nagar police station, pune 37</p>
+      <!-- <p  style="color: white;"><i class="fas fa-envelope mr-3"></i> info  .com</p> -->
+      <p  style="color: white; cursor: pointer;" (click)="callPhoneNumber()"><i class="fas fa-phone mr-3"></i><ion-icon name="call-outline"></ion-icon> +91 8888388625</p>
+      <!-- <p  style="color: white;"><i class="fas fa-print mr-3"></i> + 01 234 567 89</p> -->
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+      <h5 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Follow us</h5>
+     <div class="row">
+      <div class="col-3">
+        <ion-icon style="color: #25d366; font-size: x-large;" name="logo-whatsapp"></ion-icon>
+
+      </div>
+      <div class="col-3">
+        <ion-icon style="color: #FF0000; font-size: x-large" name="logo-youtube"></ion-icon>
+
+      </div>
+      <div class="col-3">
+        <ion-icon style="color: #1877F2; font-size: x-large" name="logo-facebook"></ion-icon>
+
+      </div>
+      <div class="col-3">
+        <ion-icon style="color:#C13584 ; font-size: x-large" name="logo-instagram"></ion-icon>
+      </div>
+     </div>
+    </div>
+  </div>
+  <!--Grid row-->
+  </section>
+  <!-- Section: Links -->
+  </div>
+  <br>
+</div>
+<div
+ class="text-center p-3"
+ style="background-color: wheat"
+ >
+© 2020 Copyright:
+<a class="text-black" href="https://mdbootstrap.com/"
+ >MDBootstrap.com</a
+>
+</div>
+</ion-content>

@@ -1,0 +1,42 @@
+.custom-menu {
+  width: 350px; /* custom menu width */
+//   border-radius: 12px 0 0 12px; /* rounded left edge only */
+  overflow: hidden;
+}
+
+/* Customize list items */
+ion-item {
+  font-size: 23px;
+  font-weight: 500;
+  padding: 12px 0;
+  background-color: none;
+//   padding-left: 2px;
+//   border-bottom: 1px solid #e1e1e1;
+
+}
+.stitle{
+    padding-left: 7px;
+    padding-top: 3px;
+}
+ion-icon{
+    font-size: 23px;
+    color:#3b82f6;
+}
+/* Menu background */
+ion-content {
+  --background: #F8FBFF;
+}
+
+/* Menu header title styling */
+ion-title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Hover effect */
+ion-item:hover {
+
+  transition: 0.3s;
+
+}

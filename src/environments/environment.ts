@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://34.239.247.254:8080',
+  apiUrl: 'https://leelavaticlasses.com',
+  // serverBaseUrl:'https://carudyog.com/api'
 };
 
 /*

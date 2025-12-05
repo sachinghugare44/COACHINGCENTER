@@ -1,15 +1,71 @@
-<ion-header style="background-color: #C4DFE6;" >
-  <ion-row>
+<!-- <app-hamberger-menu></app-hamberger-menu> -->
+<ion-header  class="largedisplay" style="background-color: #0D47A1;" >
+<div>
+   <ion-row>
     <ion-col size="10" offset="1">
       <div class="row">
-        <div class="col-5">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5">
           <div class="row">
-            <div class="col">
-              <ion-title class="headtitle">Excellent </ion-title>
+            <div class="col p-1">
+              <img  class="mainlogo" src="assets/homepage/lawatinewlnew3.png">
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7" style="text-align: right;">
+          <div class="row p-2">
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('home')"><ion-icon class="inhome" name="home"></ion-icon> <span style="padding-bottom: 5px;"> Home </span></ion-title>  </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="onclickresult()" ><ion-icon  class="inhome" name="bar-chart"></ion-icon> <span style="padding-bottom: 5px;"> Result </span></ion-title>
+            
+             </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('service')"><ion-icon  class="inhome" name="newspaper"></ion-icon><span style="padding-bottom: 5px;"> Service </span></ion-title> </div>
+              <div class="col-2">
+                <ion-title class="subotion" (click)="scrollToSection1('about')"><ion-icon class="inhome" name="id-card"></ion-icon><span style="padding-bottom: 5px;"> About us </span></ion-title> </div>
+            <div class="col-2">
+              <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
+               <ion-button (click)="callPhoneNumber()" fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
             </div>
           </div>
         </div>
-        <div class="col-7" style="text-align: right;">
+      </div>
+    
+    </ion-col>
+  </ion-row>
+</div>
+
+</ion-header>
+<ion-header  class="smalldisplay" style="background-color: #0D47A1;" >
+<div>
+ 
+   <ion-row>
+    <ion-col size="10" offset="1">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col p-2">
+              <img height="30px" src="assets/homepage/lawatinewl3.png">
+            </div>
+          </div>
+        </div>
+       <div class="col-4"></div>
+        <div class="col-2"  >
+          <!-- <ion-button (click)="callPhoneNumber()" fill="clear" class="call" >Call Now   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button> -->
+              <!-- <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons> -->
+    <ion-buttons slot="end" style="color:white; padding-left: 14px;">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+
+         </div>
+
+        <!-- <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6" style="text-align: right;">
           <div class="row p-2">
             <div class="col-2">
               <ion-title class="subotion" (click)="scrollToSection1('home')">Home</ion-title>  </div>
@@ -22,29 +78,45 @@
               <div class="col-2">
                 <ion-title class="subotion" (click)="scrollToSection1('about')">About us</ion-title> </div>
             <div class="col-2">
-              <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
                <ion-button fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     
     </ion-col>
   </ion-row>
-</ion-header>
+</div>
 
+</ion-header>
 <ion-content  (ionScroll)="onScroll($event)" scrollEvents="true">
- 
+ <!-- <button class="slide-in-btn">
+  Click Me
+</button> -->
+<div class="largedisplay">
+  <!-- <swiper  class="mySwiper">
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+</swiper> -->
+
+ <!-- <swiper-container #swiper [slidesPerView]="1" [zoom]="true">
+
+            <swiper-slide>
+              </swiper-slide>
+              </swiper-container> -->
 <div class="bg" id="home">
 <div class="row text-center">
   <div class="col">
     <br><br><br><br>  <br><br><br>
-   <ion-title class="maintitle">Excellent</ion-title>
-   <ion-text class="sub-title">AS Your Enducaaton Served more Action in Fiture</ion-text>
-  
+   <!-- <ion-title class="maintitle">Excellent</ion-title> -->
+      <img  height="83px" src="assets/homepage/lawatitext1.png"><br>
+      <div class="text-with-cursor">
+   <ion-text class="sub-title">"Empower minds through knowledge and learning" <span class="cursor"></span></ion-text>
+  </div>
   </div>
 </div>
-<br><br> <br> <br>
+<br><br> <br> <br><br> <br>
 <ion-row>
   <ion-col>
 
@@ -52,13 +124,14 @@
       <div class="col">
         <ion-row>
           <ion-col size="10" offset="1">
-            <div class="row p-2" style=" border-radius: 8px; background-color: brown;">
+            <div class="slide-in-btn">
+            <div class="row p-2" style=" border-radius: 8px; background-color: #F8FBFF;">
 
               <div class="col" style="text-align: center;">
                 <br>
                 <div class="row text-center">
                   <div class="col">
-                    <h1 class="counttilte">Our Prescnece</h1>
+                    <h1 class="counttilte-h">Our Prescnece</h1>
                   </div>
                 </div>
               </div>
@@ -81,7 +154,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6" style="text-align: center; border-right: 2px solid skyblue;">
                   <span>
                     <h4 class="counttilte" id="nbr2"><b>{{ counters[2] }}+</b></h4>
-                    <h5 class="counttilte">Total Passed Student </h5>
+                    <h5 class="counttilte">Total Passed Students </h5>
                   </span>
                 </div>
     
@@ -94,6 +167,7 @@
     
               </div>
             </div>
+            </div>
           </ion-col>
         </ion-row>
        
@@ -104,36 +178,115 @@
   </ion-col>
 </ion-row>
 </div>
-
-<br><br><br> <br><br>
-<ion-row>
-  <ion-col size="10" offset="1.5">
+</div>
+<div class="smalldisplay">
+  <div class="bg" id="home">
+ <div class="row text-center">
+  <div class="col">
+    <br><br><br><br>  <br>
+   <!-- <ion-title class="maintitle">Excellent</ion-title> -->
+      <img height="60px" src="assets/homepage/lawatitext1.png"><br>
+   <ion-text class="sub-title">"Empower minds through knowledge and learning"</ion-text>
+  
+  </div>
+</div>
+<br><br> <br>
+ <div class="row text-center p-2" >
+  <div class="col-1">
+    
+  </div>
+   <div class="col-4">
+    <div class="smallcard p-2">
+      <span>
+                    <h5 class="counttilte" id="nbr"><b>{{ counters[0] }}+</b></h5>
+                    <h6 class="counttilte">Exam Pattern</h6>
+                  </span>
+    </div>
+  </div>
+  <div class="col-1" >
+    
+  </div>
+   <div class="col-4">
+    <div class="smallcard p-2">
+     <span>
+                    <h5 class="counttilte" id="nbr1"><b>{{ counters[1] }}+</b></h5>
+                    <h6 class="counttilte">Students Enrolled</h6>
+                  </span>
+    </div>
+  </div>
+   <div class="col-2">
+   
+  </div>
+ </div>
+ <br>
+ <div class="row text-center p-2">
+  <div class="col-1">
+    
+  </div>
+   <div class="col-4">
+    <div class="smallcard p-2">
+      <span>
+                    <h5 class="counttilte" id="nbr2"><b>{{ counters[2] }}+</b></h5>
+                    <h6 class="counttilte">Total Passed</h6>
+                  </span>
+    </div>
+  </div>
+   <div class="col-1">
+    
+  </div>
+   <div class="col-4">
+    <div class="smallcard p-2">
+     <span>
+                    <h5 class="counttilte" id="nbr3"><b>{{ counters[3] }}+</b></h5>
+                    <h6 class="counttilte">90%+ Marks </h6>
+                  </span>
+    </div>
+  </div>
+   <div class="col-2">
+   
+  </div>
+ </div>
+ <br><br> 
+</div>
+<!-- <br><br> <br> <br> -->
+</div>
+<br><br><br> <br> <br>
+<ion-row> 
+   <ion-col size="10" offset="1.5">
     <div class="row">
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-        <div class="row">
+        <div class="slide-in">
+        <div class="row p-1">
           <div class="col">
-            <h1>Excellenxt</h1>
+             <img height="55px" src="assets/homepage/lawatitext1.png">
           </div>
         </div>
-        <div class="row">
+        <div class="row p-1">
           <div class="col">
-            <h3><b>Online Education Learning hsjhsjhs.</b></h3></div>
+            <h4 style="color: #1565C0;"><b>Welcome to Our Offline Tuition Classes</b></h4></div>
         </div>
-        <br>
-        <div class="row">
+        <!-- <br> -->
+        <div class="row p-1">
           <div class="col">
-            <ion-text style="text-align: left;">
-              Accusamus et iusidio dignissimos  ducimus blanditiis praesentium voluptatum
-               deleniti atque corrupti quos dolores etmquasa
-               molestias epturi sint occaecati cupiditate non providente mikume molareshe.
+            <ion-text style="text-align: left; color:#333333">
+              Welcome to Leelavati Classes, a trusted name in education since 2006. We specialize in coaching 9th and 10th standard students for all subjects, with special focus on Maths, Science, and English.
+
+              Unlike large coaching institutes, we offer a personalized, distraction-free, and result-oriented offline learning environment.
+              Our goal is to help students understand concepts thoroughly, develop exam-ready skills, and build confidence for board exams — all through regular practice,
+               doubt clearing, and small group attention.
             </ion-text>
           </div>
         </div>
+        </div>
       </div>
-      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-        <img height="200px" src="assets/homepage/teacjer.png">
-        <img height="200px" src="assets/homepage/student.png">
-        <img height="200px" src="assets/homepage/girlstudent.png">
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12">
+        </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="aslide-in">
+        <img height="350px"  src="assets/homepage/why-us.png">
+        <!-- <img height="200px" src="assets/homepage/student.png">
+        <img height="200px" src="assets/homepage/girlstudent.png"> -->
+      </div>
       </div>
      
       
@@ -144,10 +297,10 @@
     <div  id="targetSection">
     <div class="third-div">
     <ion-row>
-      <ion-col size="10" offset="2">
+      <ion-col size="10" offset="1" >
         <br><br><br>
         <div class="row">
-          <div class="col-3">
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
             <div class="row">
               <div class="col">
                 <h2>Why</h2>
@@ -155,18 +308,24 @@
             </div>
             <div class="row">
               <div class="col">
-                <h2>Excellent For You?</h2>
+                <h2><span style="color:#F8FBFF; font-weight: 850;"><b>Leelawati</b></span> For You?</h2>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <ion-text>There are many variations of passa of Lorem Ipsum available, but the majority have suffered.</ion-text>
+                <ion-text style="color:#FFF8E1"  >
+                  At "Leelavati" Classes, we believe every student
+                   deserves focused attention and a clear path to
+                    academic success.</ion-text>
               </div>
             </div>
           </div>
-          <div class="col-8">
+          <!-- <br> -->
+          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+            <br>
             <div class="row">
-              <div class="col-4">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-mb-12">
+             
                 <div class="card">
                   <!-- <img src="assets/homepage/pro.svg"> -->
                   <div class="row text-center p-2">
@@ -177,12 +336,18 @@
                  
                   <div class="row p-2">
                     <div class="col">
-                      <ion-text class="subtiltecard">It ispucioyurd sd osny  yt dhd l ggjdfjd l thta to good time tho show</ion-text>
+                      <ion-text class="subtiltecard">
+                        Year after year, our students achieve
+                         excellent scores in board exams. Our consistent
+                          academic track record reflects the 
+                        effectiveness of our teaching methods.</ion-text>
                     </div>
                   </div>
                 </div>
+                <br>
               </div>
-              <div class="col-4">
+              <!-- <br> -->
+              <div class="col-xl-4 col-lg-4 col-md-4 col-mb-12">
                 <div class="card">
                   <div class="row text-center p-2">
                     <div class="col">
@@ -192,31 +357,36 @@
                  
                   <div class="row p-2">
                     <div class="col">
-                      <ion-text class="subtiltecard">It ispucioyurd sd osny  yt dhd l ggjdfjd l thta to good time tho show</ion-text>
+                      <ion-text class="subtiltecard">
+                        We provide structured notes, practice worksheets, and regular assessments that help students grasp concepts faster and retain better — making learning easier and more organized.</ion-text>
                     </div>
                   </div>
                 </div>
+                 <br>
               </div>
-              <div class="col-4">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-mb-12">
                 <div class="card" >
                   <div class="row text-center p-2">
                     <div class="col">
-                    <ion-title class="gooenv">Mentor Support</ion-title>
+                    <ion-title class="gooenv"> Mentor Support</ion-title>
                     </div>
                   </div>
                  
                   <div class="row p-2">
                     <div class="col">
-                      <ion-text class="subtiltecard">It ispucioyurd sd osny  yt dhd l ggjdfjd l thta to good time tho show</ion-text>
+                      <ion-text class="subtiltecard">
+                        Our teachers are more than instructors — they’re mentors who guide, motivate, and support students throughout their academic journey,
+                         ensuring no doubt is left unanswered.</ion-text>
                     </div>
                   </div>
                 </div>
+                 <br>
               </div>
               
             </div>
           </div>
         </div>
-        <br><br><br>
+        <br><br>
 
       </ion-col>
     </ion-row>
@@ -224,10 +394,124 @@
      
     </div>
   </div>
+
+   
+    <br><br><br>
+    <ion-row >
+      <ion-col size="10" offset="0.5">
+     <section class="content-card" id="courses">
+    <div class="section-image">
+      <img style="width: 90%; height: 90%; border-radius: 24px;" src="assets/homepage/Imagessss.jpeg" alt="Teacher explaining lesson">
+    </div>
+    <div class="section-text">
+      <ion-badge color="secondary">Courses & Classes</ion-badge>
+      <h2 style="color: #1565C0;">All Subjects, Strong Fundamentals</h2>
+      <p>We offer comprehensive coaching for 9th and 10th standard students with extra focus on foundation subjects.</p>
+      <ion-list lines="none" class="bullet-list">
+        <ion-item>
+          <ion-icon name="copy" slot="start" color="primary"></ion-icon>
+          <ion-label>Maths mastery with problem-solving drills</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="copy" slot="start" color="primary"></ion-icon>
+          <ion-label>Science labs & demo-based learning</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="copy" slot="start" color="primary"></ion-icon>
+          <ion-label>English fluency and grammar excellence</ion-label>
+        </ion-item>
+      </ion-list>
+      <p class="note">Experienced faculty and comprehensive curriculum ensure the best possible education.</p>
+    </div>
+  </section>
+</ion-col>
+    </ion-row>
+  <br><br><br> 
+    <ion-row> 
+   <ion-col size="10" offset="1">
+     <section class="contact" id="contact">
+    <ion-badge color="dark">Get In Touch</ion-badge>
+    <h2>Join the League of Toppers</h2>
+    <p>Admission open for 9th and 10th standard students. Call us today to schedule a meeting and take the first step towards academic excellence!</p>
+    <div class="contact-grid">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <h3>Leelavati Classes</h3>
+        <p class="klm"><span style="font-size: medium;"><ion-icon name="location"></ion-icon>Address:</span> Salisbury park, opp Mahaveer Pratishthan School ,Next to Rohan Apartment,Near Maharashi Nagar police station, pune.</p>
+        <p style="font-size: large;"><span style="font-size: medium;"><ion-icon name="call"></ion-icon>Phone:</span> +91 8888388625, 8446555365</p>
+        <!-- <p>Email: enquiry @ leelavaticlasses.com</p> -->
+        <p style="font-size: large;"><span style="font-size: medium;"><ion-icon name="aperture"></ion-icon>Website:</span> www.leelavaticlasses.com</p>
+      </div>
+      
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <h3>Request a Callbacks</h3>
+       <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+    <ion-item class="inputs">
+      <ion-input class="inputs" placeholder="Full Name" formControlName="name" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item class="inputs">
+      <ion-input placeholder="Mobile Number" formControlName="mobile" name="mobile" required></ion-input>
+    </ion-item>
+
+    <ion-item class="inputs">
+      <ion-select placeholder="Select Course" formControlName="course" name="course" required>
+        <ion-select-option>8th Standard</ion-select-option>
+        <ion-select-option>9th Standard</ion-select-option>
+        <ion-select-option>10th Standard</ion-select-option>
+      </ion-select>
+    </ion-item> 
+
+    <ion-item class="inputs">
+      <ion-textarea placeholder="Inquiry Message" formControlName="message" name="message"></ion-textarea>
+    </ion-item>
+
+    <ion-button  class="sb" expand="block" fill="clear" type="submit">Submit Inquiry</ion-button>
+
+  </form>
+      </div>
+      </div>
+   </div>
+  </section>
+  </ion-col>
+  </ion-row>
+   
+
+<!-- </ion-content> -->
+ <!-- <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+          <ion-item class="form-field">
+            <ion-input label="Student Name" labelPlacement="floating" placeholder="Enter name" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-note class="error-message" color="danger" >
+            Please provide a valid name (min 2 characters).
+          </ion-note>
+
+          <ion-item class="form-field">
+            <ion-input label="Phone Number" labelPlacement="floating" type="tel" placeholder="10-digit mobile" formControlName="phone"></ion-input>
+          </ion-item>
+          <ion-note class="error-message" color="danger" >
+            Please enter a valid 10-digit phone number.
+          </ion-note>
+
+          <ion-item class="form-field">
+            <ion-textarea label="Query / Feedback" labelPlacement="floating" placeholder="Tell us your requirement" auto-grow="true" formControlName="message"></ion-textarea>
+          </ion-item>
+          <ion-note class="error-message" color="danger" >
+            Please describe your query or feedback (min 10 characters).
+          </ion-note>
+
+          <ion-button type="submit" expand="block" color="primary" [disabled]="feedbackForm.invalid">
+            Submit & Save to Excel
+          </ion-button>
+          <ion-note color="dark" class="hint">
+            A downloadable Excel file containing all submissions will be generated automatically.
+          </ion-note>
+        </form> -->
     <br><br><br>
     <div class="row text-center">
       <div class="col">
-        <h1>Our Pride Facalty</h1>
+        <h1 style="color: #1565C0;">Our Pride Facalty</h1>
+        <hr >
       </div>
     </div>
     <br>
@@ -235,7 +519,7 @@
       <ion-row>
         <ion-col size="10" offset="1.5">
           <div class="row">
-           <div class="col-3">
+           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
             <div class="row">
               <div class="col">
                 <div class="teacher-card">
@@ -243,13 +527,14 @@
                     <img  src="assets/homepage/student.png">
                   </div>
                  
-                  <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small;">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center;">B.E Compiter</p>
+                  <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
                 </div>
+                <br> <br>
               </div>
             </div>
            </div>
-           <div class="col-3">
+           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
             <div class="row">
               <div class="col">
                 <div class="teacher-card">
@@ -257,27 +542,28 @@
                     <img  src="assets/homepage/student.png">
                   </div>
                  
-                  <ion-title style="text-align: center; padding: 3px; font-weight: 900;  font-size: small">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center;">B.E Compiter</p>
+                  <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
                 </div>
+                <br> <br>
               </div>
             </div>
            </div> 
-           <div class="col-3">
+           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
             <div class="row">
               <div class="col">
                 <div class="teacher-card">
                   <div class="imagecard p-2">
                     <img  src="assets/homepage/student.png">
                   </div>
-                 
-                  <ion-title style="text-align: center; padding: 3px; font-weight: 900;  font-size: small">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center;">B.E Compiter</p>
+                 <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
                 </div>
+                <br> <br>
               </div>
             </div>
            </div>
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
             <div class="row">
               <div class="col">
                 <div class="teacher-card">
@@ -285,9 +571,10 @@
                     <img  src="assets/homepage/student.png">
                   </div>
                  
-                  <ion-title style="text-align: center; padding: 3px; font-weight: 900;  font-size: small">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center;">B.E Compiter</p>
+                  <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
+                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
                 </div>
+                <br> <br>
               </div>
             </div>
            </div>
@@ -302,7 +589,7 @@
     <div id="about">
     <div class="row text-center">
       <div class="col">
-        <h1>About Us.... </h1>
+        <h1 style="color: #1565C0;">About Us.... </h1>
       </div>
     </div>
    
@@ -311,29 +598,30 @@
       <ion-row>
         <ion-col size="11" offset="1">
           <div class="row p-2">
-            <div class="col-1"></div>
-            <div class="col-4">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
               <br>
               <div class="row">
                 <div class="col">
-                  <ion-text style="color:black; font-size:medium"> Lorem ipsum dolor sit amet consectetur, 
-                    adipisicing elit. Aspernatur aliquid, itaque fugiat
-                     est tenetur magni, labore quasi quod soluta accusamus, 
-                    corporis laborum! Similique molestias facere et id sapiente in tempora 
-                    . Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Iste sed consequuntur corporis quo magnam consectetur blanditiis a
-                     quia odit repudiandae adipisci officia aspernatur perferendis eveniet
-                      omnis non dolore, impedit sunt?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                     vel ipsam perspiciatis placeat, maiores officia, provident sit 
-                     exercitationem laudantium voluptatibus voluptas? Possimus,
-                     fugiat praesentium! Iure velit nulla doloribus dolore reiciendis.</ion-text>
+                   <div class="slide-in">
+                  <ion-text style="color:#333333; font-size:medium">
+                    <span style="font-size: x-large; color: #1E88E5;">L</span>eelavati Classes is a well-established coaching institute dedicated to students of 9th and 10th standard. With a rich history of academic excellence, the class is known for its individual attention to every student, ensuring that each learner receives the support and guidance they need to succeed.
+
+The class is backed by a team of experienced and dedicated faculty members who are passionate about teaching. Their systematic approach includes regular test series, personalized observation, and continuous feedback to monitor student progress effectively.
+
+What sets Leelavati Classes apart is its commitment to nurturing all types of learners — from high achievers to those who may initially struggle with academics. Through interactive teaching methods, special doubt-solving sessions, and targeted guidance, the class helps every student develop a genuine interest in learning.
+
+Whether a student is excelling or needs extra motivation, Leelavati Classes is focused on bringing out the best in each individual.</ion-text>
+</div>
                 </div>
               </div>
+              <br>
             </div>
-            <div class="col-2"></div>
-            <div class="col-5">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+               <div class="aslide-in">
               <img height="350px" src="assets/homepage/teacjer.png">
+            </div>
             </div>
             <!-- <div class="col-1"></div> -->
           </div>
@@ -343,44 +631,117 @@
     </div>
     </div>
      <br><br><br>
+     <!--location-->
+       <div class="row text-center">
+      <div class="col">
+        <h1 style="color: #1565C0;">Location </h1>
+      </div>
+    </div>
+    <br><br>
+    
+     <ion-row>
+      <ion-col size="10" offset="1">
+
+<div class="caafull">
+  <br>
+    <div class="row">
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+    
+        <div class="cardlocation">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3783.7736855267153!2d73.86883817519107!3d18.493907682594376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMahaveer%20School%20gultekdi%20Swargate!5e0!3m2!1sen!2sin!4v1753030521465!5m2!1sen!2sin" width="280" height="350" style="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+      </div>
+      <!-- <div class="col-1"></div> -->
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+        
+       
+
+        <br><br>
+        <div class="row p-2">
+          <div class="col">
+        <ion-text style=" color: #1E88E5;font-size: medium;"><ion-icon name="location-outline" style="color: crimson;"></ion-icon>Address:</ion-text><br>
+        <ion-text style="font-size:large ; color:#333333; font-weight: 650;">Leelavati classes 
+       Salisbury park, <span> opp Mahaveer Pratishthan School ,</span>
+       <span>Next to Rohan
+    Apartment,Near Maharashi Nagar police station, pune 37</span></ion-text>
+ <br><br>
+ <ion-text style="color:#1E88E5; font-size:medium ;"><ion-icon name="call-outline" style="color: blue;"></ion-icon>Contact Details:</ion-text>
+ <br>
+ <ion-text (click)="callPhoneNumber()" style="color:#333333; font-size:large ; cursor: pointer;"> <b>Mobile No : +91 8888388625, 8446555365</b> <b>Mobile No : +91 8888388625, 8446555365</b> </ion-text>
+ <br><br>
+ <ion-text style="color:#1E88E5; font-size:medium ;"><ion-icon name="mail-outline" style="color: orange"></ion-icon>Email:</ion-text>
+ <br>
+ <ion-text style="color:#333333; font-size:large ;"><b>leelawatigmail.com</b></ion-text>
+
+ <!-- <ion-text style="color: black; font-size:large ;">Mobile No : +91 8888388625</ion-text> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
+   
+   </div>
+    </div>
+      </ion-col>
+     </ion-row>
+    
+    <br><br><br>
+
 <ion-row>
   <ion-col size="10" offset="1">
     <div class="row text-center">
       <div class="col">
-        <h1>What Our Students Have to Say</h1>
+        <h1 style="color: #1565C0;">What Our Students Have to Say</h1>
       </div>
     </div>
     <br><br>
 
     <div class="row">
-      <div class="col-1"></div>
-      <div class="col-4">
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
         <div class="cards p-2">
           <div class="row">
             <div class="col">
-              <ion-text class="subtiltecard">Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
-
+               <!-- <img height="50px" style="background:none;position:absolute; bottom:20px;"  src="assets/homepage/doublecot.png"> -->
             </div>
           </div>
-          <br>
-          <div class="row">
-            <div class="col-3">
-              <img  height="60px" src="assets/homepage/girlstudent.png">
-            </div>
-            <div class="col-5">
-              <ion-title class="mainhead2">Sachin</ion-title>
-              <p>Pune , Mharashta</p>
-              <!-- <div class="col-3"></div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-2"></div>
-      <div class="col-4">
-        <div class="cards">
-          <div class="row">
+          <div class="row text-center">
             <div class="col">
-              <ion-text class="subtiltecard">Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
+              <ion-text class="subtiltecard">
+                “Leelavati Classes helped me build a 
+                strong foundation in Math and Science.
+                 The personal attention made all the 
+                 difference. My marks and confidence both have improved a lot.”</ion-text>
+            </div>
+          </div>
+         
+          <br>
+          <div class="row">
+            <div class="col-3">
+              <img  height="60px" src="assets/homepage/girlstudent.png">
+            </div>
+            <div class="col-9">
+              <ion-title class="mainhead2">Ruchi sharma</ion-title>
+              <p style="font-size: small; color: #333333;">Pune , Mharashta</p>
+              <!-- <div class="col-3"></div> -->
+            </div>
+          </div>
+          
+        </div>
+        <br>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12"></div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        <div class="cards p-2">
+          <div class="row text-center">
+            <div class="col">
+              <ion-text class="subtiltecard">
+                “The study material provided 
+                by the
+                 class is well-organized and easy to follow.
+                  Weekly tests and progress reports kept me on track.
+                I feel much more confident now for my board exams.”</ion-text>
 
             </div>
           </div>
@@ -389,24 +750,24 @@
             <div class="col-3">
               <img  height="60px" src="assets/homepage/girlstudent.png">
             </div>
-            <div class="col-5">
-              <ion-title class="mainhead2">Sachin</ion-title>
-              <p>Pune , Mharashta</p>
+            <div class="col-9">
+               <ion-title class="mainhead2">Ruchi sharma</ion-title>
+              <p style="font-size: small;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="col-1"></div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
     </div>
     <br><br>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-4">
-        <div class="cards">
+   <div class="row">
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        <div class="cards p-2">
           <div class="row">
-            <div class="col">
-              <ion-text class="subtiltecard">Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
+            <div class="co text-center">
+              <ion-text class="subtiltecard">“What I love the most about Leelavati Classes is the peaceful environment and the teacher's dedication. Every doubt is taken seriously, and the way topics are taught makes them easy to understand."</ion-text>
 
             </div>
           </div>
@@ -415,20 +776,22 @@
             <div class="col-3">
               <img  height="60px" src="assets/homepage/girlstudent.png">
             </div>
-            <div class="col-5">
-              <ion-title class="mainhead2">Sachin</ion-title>
-              <p>Pune , Mharashta</p>
+            <div class="col-9">
+              <ion-title class="mainhead2">Ruchi sharma</ion-title>
+              <p style="font-size: small;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
           </div>
         </div>
+        <br>
       </div>
-      <div class="col-2"></div>
-      <div class="col-4">
-        <div class="cards">
-          <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12"></div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        <div class="cards p-2">
+          <div class="row text-center">
             <div class="col">
-              <ion-text>Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</ion-text>
+              <ion-text class="subtiltecard">Leelavati Classes is more than just a tuition class — it’s a place where you’re
+                 guided, motivated, and treated like family.The teachers not only teach but also help us build good study habits and discipline."</ion-text>
 
             </div>
           </div>
@@ -437,59 +800,19 @@
             <div class="col-3">
               <img  height="60px" src="assets/homepage/girlstudent.png">
             </div>
-            <div class="col-5">
-              <ion-title>Sachin</ion-title>
-              <p>Pune , Mharashta</p>
+            <div class="col-9">
+               <ion-title class="mainhead2">Ruchi sharma</ion-title>
+              <p style="font-size: small;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="col-1"></div>
+      <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12"></div>
     </div>
     <br><br><br>
-    <div class="row text-center">
-      <div class="col">
-        <h1>Our Memerioeses</h1>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-3">
-        <ion-card>
-          <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-          </div>
-      <img src="assets/homepage/student.png">
-        </ion-card>
-        </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-        </ion-card>
-      </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-          </ion-card>
-        </div>
-        <div class="col-3">
-          <ion-card>
-            <div style="background-color:aquamarine; height: 20px; width: 100%;">
-              
-            </div>
-            <img src="assets/homepage/student.png">
-           
-          </ion-card>
-        </div> 
-    </div>
-    <br>
+    
+    <!-- <br>
     <div class="row">
       <div class="col-3">
         <ion-card>
@@ -560,8 +883,38 @@
            
           </ion-card>
         </div> 
-    </div>
+    </div> -->
   </ion-col>
+  <ion-row>
+    <ion-col size="11" offset="1">
+       <div class="row text-center">
+      <div class="col">
+        <h1>Our Memories</h1>
+      </div>
+    </div>
+    <br>
+    <section class="memories" id="memories" #memoriesSection>
+    <div class="section-head">
+      <ion-badge color="primary">Our Memories</ion-badge>
+      <h2>Cherished Moments</h2>
+      <p>Relive the wonderful events, celebrations, and joyful moments we've shared together at Leelavati Classes.</p>
+    </div>
+    <div class="memories-grid">
+      <div class="memory-card" *ngFor="let memory of memories">
+        <div class="memory-image">
+          <img [src]="memory.imageUrl" [alt]="memory.title" loading="lazy">
+          <div class="memory-content">
+            <h3>{{ memory.title }}</h3>
+            <p class="memory-date" *ngIf="memory.date">{{ memory.date }}</p>
+            <p class="memory-desc" *ngIf="memory.description">{{ memory.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    </ion-col>
+  </ion-row>
+ 
  
 </ion-row>
    <br><br><br>
@@ -574,11 +927,9 @@
   <div class="row">
     <!-- Grid column -->
     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-      <h6 style="color: white;" class="headtitle-n mb-4 font-weight-bold">
-       Excellent
-      </h6>
+      <img height="50px" src="assets/homepage/lawatinewl3.png">
     <hr style="color: white;">
-      <p style="color: white;">
+      <p style="color:#F8FBFF;">
         Here you can use rows and columns to organize your footer
         content. Lorem ipsum dolor sit amet, consectetur adipisicing
         elit.
@@ -590,18 +941,18 @@
   
     <!-- Grid column -->
     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-      <h6 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Company</h6>
+      <h5 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Company</h5>
       <p>
-        <a class="text-white">Home </a>
+        <a class="text-white" (click)="scrollToSection1('home')">Home </a>
       </p>
       <p>
-        <a class="text-white">Service</a>
+        <a class="text-white" (click)="scrollToSection1('targetSection')">Result</a>
       </p>
       <p>
-        <a class="text-white">About Us</a>
+        <a class="text-white" (click)="scrollToSection1('service')">Service</a>
       </p>
       <p>
-        <a class="text-white">Contact Us</a>
+        <a class="text-white" (click)="scrollToSection1('about')">Contact Us</a>
       </p>
     </div>
     <!-- Grid column -->
@@ -613,32 +964,33 @@
   
     <!-- Grid column -->
     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-      <h6 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-      <p  style="color: white;"><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-      <p  style="color: white;"><i class="fas fa-envelope mr-3"></i> info  .com</p>
-      <p  style="color: white;"><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-      <p  style="color: white;"><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+      <h5 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Contact</h5>
+      <p  style="color: white;"><i class="fas fa-home mr-3"></i><ion-icon name="location-outline"></ion-icon>Leelavati classes Salisbury park, opp Mahaveer
+      Pratishthan School ,Next to Rohan Apartment,Near Maharashi Nagar police station, pune 37</p>
+      <!-- <p  style="color: white;"><i class="fas fa-envelope mr-3"></i> info  .com</p> -->
+      <p  style="color: white; cursor: pointer;" (click)="callPhoneNumber()"><i class="fas fa-phone mr-3"></i><ion-icon name="call-outline"></ion-icon> +91 8888388625</p>
+      <!-- <p  style="color: white;"><i class="fas fa-print mr-3"></i> + 01 234 567 89</p> -->
     </div>
     <!-- Grid column -->
   
     <!-- Grid column -->
     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-      <h6 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+      <h5 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Follow us</h5>
      <div class="row">
       <div class="col-3">
-        <ion-icon style="color: antiquewhite; font-size: x-large;" name="logo-whatsapp"></ion-icon>
+        <ion-icon style="color: #25d366; font-size: x-large;" name="logo-whatsapp"></ion-icon>
 
       </div>
       <div class="col-3">
-        <ion-icon style="color: antiquewhite; font-size: x-large" name="logo-youtube"></ion-icon>
+        <ion-icon style="color: #FF0000; font-size: x-large" name="logo-youtube"></ion-icon>
 
       </div>
       <div class="col-3">
-        <ion-icon style="color: antiquewhite; font-size: x-large" name="logo-facebook"></ion-icon>
+        <ion-icon style="color: #1877F2; font-size: x-large" name="logo-facebook"></ion-icon>
 
       </div>
       <div class="col-3">
-        <ion-icon style="color: antiquewhite; font-size: x-large" name="logo-instagram"></ion-icon>
+        <ion-icon style="color:#C13584 ; font-size: x-large" name="logo-instagram"></ion-icon>
       </div>
      </div>
     </div>
@@ -665,9 +1017,9 @@
 
 
 
-<ion-fab slot="fixed" horizontal="right" vertical="bottom">
+<!-- <ion-fab slot="fixed" horizontal="right" vertical="bottom">
   <ion-fab-button>
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
-</ion-fab>
+</ion-fab> -->
 </ion-content>
