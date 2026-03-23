@@ -280,20 +280,21 @@ color:white;
 
 .achievement-card img {
   width: 100%;
+  // height: auto;
   border-radius: 16px;
   margin-bottom: 1rem;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+  aspect-ratio: 2/2;
+  object-fit: contain;
 }
 
 .achievement-card h3 {
   margin: 0.5rem 0;
   font-size: 1.25rem;
-  color: var(--text-dark);
+  color: black
 }
 
 .achievement-card p {
-  color: var(--text-muted);
+  color: black;
   font-size: 0.9rem;
   margin: 0;
 }
@@ -311,10 +312,11 @@ color:white;
 .section-head h2 {
   margin: 0.5rem 0 1rem;
   font-size: 2rem;
+  color: var(--dark light, #1E88E5);
 }
 
 .section-head p {
-  color: var(--text-muted);
+  color: black;
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -389,13 +391,18 @@ color:white;
 .photo-info h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.3rem;
-  color: var(--text-dark);
+  color: black;
   font-weight: 600;
 }
 
 .photo-info p {
   margin: 0;
-  color: var(--text-muted);
+  color: black;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.toppers-image{
+  margin-top: 2rem;
+  text-align: center;
 }

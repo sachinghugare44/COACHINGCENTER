@@ -92,38 +92,38 @@ callPhoneNumber(phoneNumber:number) {
     {
       id: 1,
       imageUrl: 'assets/homepage/winnergrpphoto_mem.jpg',
-      title: 'Cricket Championship 2024',
-      caption: 'Our students won the inter-school cricket tournament'
+      title: 'Cricket Championship 2025',
+      caption: 'Champions'
     },
     {
       id: 2,
       imageUrl: 'assets/homepage/runnerupgrp_photo.jpg',
-      title: 'Football League Winners',
-      caption: 'Champions of district football league 2024'
+      title: 'Cricket Championship 2025',
+      caption: 'Champions'
     },
     {
       id: 3,
       imageUrl: 'assets/homepage/mot_photo1.jpg',
-      title: 'Athletics Meet 2024',
-      caption: 'Multiple gold medals in track and field events'
+      title: 'Cricket Championship 2025',
+      caption: 'Champions'
     },
     {
       id: 4,
       imageUrl: 'assets/homepage/mot_photo.jpg',
-      title: 'Basketball Tournament',
-      caption: 'First place in regional basketball championship'
+     title: 'Cricket Championship 2025',
+      caption: 'Champions'
     },
     {
       id: 5,
       imageUrl: 'assets/homepage/mot_girl_photo.jpg',
-      title: 'Badminton Excellence',
-      caption: 'Students excel in state badminton competition'
+      title: 'Cricket Championship 2025',
+      caption: 'Champions'
     },
     {
       id: 6,
       imageUrl: 'assets/homepage/fgrpwinnerphoto.jpg',
-      title: 'Swimming Champions',
-      caption: 'Outstanding performance in swimming championships'
+     title: 'Cricket Championship 2025',
+      caption: 'Champions'
     }
   ];
 }

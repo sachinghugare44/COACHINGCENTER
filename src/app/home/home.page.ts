@@ -433,5 +433,13 @@ memories:Memory[] = [
       description: 'Interactive learning workshops'
     }
   ];
+
+  onClick(event: any) {
+  const btn = event.target;
+    window.open('assets/LEELAVATI CLASSES (1).pdf', '_blank');
+  setTimeout(() => {
+    btn.classList.remove('clicked');
+  }, 300);
+}
 }
 

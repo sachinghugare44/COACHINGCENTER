@@ -276,7 +276,7 @@
         <!-- <br> -->
         <div class="row p-1">
           <div class="col">
-            <ion-text style="text-align: left; color:#333333">
+            <ion-text style="text-align: left; color:var(--ion-text-color, #222)">
               Welcome to Leelavati Classes, a trusted name in education since 2006. We specialize in coaching 9th and 10th standard students for all subjects, with special focus on Maths, Science, and English.
 
               Unlike large coaching institutes, we offer a personalized, distraction-free, and result-oriented offline learning environment.
@@ -325,6 +325,16 @@
                 <ion-text style="color:#FFF8E1"  >
                  30 merit‑holders every year for the last decade, 80+ distinctions
 </ion-text>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="center">
+                  <button class="circle-btn" (click)="onClick($event)">
+                    Why us?
+                  </button>
+                </div>
+
               </div>
             </div>
           </div>
@@ -384,7 +394,7 @@
                   <div class="row p-2">
                     <div class="col">
                       <ion-text class="subtiltecard">
-                        Our teachers are more than instructors — they’re mentors who guide, motivate, and support students throughout their academic journey,
+                        Our teachers are more than instructors — they’re mentors who guide, motivate, and support students  their academic journey,
                          ensuring no doubt is left unanswered.</ion-text>
                     </div>
                   </div>
@@ -536,7 +546,7 @@
                   </div>
                  
                   <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
+                  <p style="text-align: center; color: var(--ion-text-color, #222);">B.E Compiter</p>
                 </div>
                 <br> <br>
               </div>
@@ -551,7 +561,7 @@
                   </div>
                  
                   <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
+                  <p style="text-align: center; color: var(--ion-text-color, #222);">B.E Compiter</p>
                 </div>
                 <br> <br>
               </div>
@@ -565,7 +575,7 @@
                     <img  src="assets/homepage/student.png">
                   </div>
                  <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
+                  <p style="text-align: center; color: var(--ion-text-color, #222);">B.E Compiter</p>
                 </div>
                 <br> <br>
               </div>
@@ -580,7 +590,7 @@
                   </div>
                  
                   <ion-title style="text-align: center; padding: 3px; font-weight: 900; font-size: small; color: #1E88E5;">Mr.Sachin Ghuggare</ion-title>
-                  <p style="text-align: center; color: #333333;">B.E Compiter</p>
+                  <p style="text-align: center; color: var(--ion-text-color, #222);">B.E Compiter</p>
                 </div>
                 <br> <br>
               </div>
@@ -612,7 +622,7 @@
               <div class="row">
                 <div class="col">
                    <div class="slide-in">
-                  <ion-text style="color:#333333; font-size:medium">
+                  <ion-text style="color:black; font-size:medium">
                     <span style="font-size: x-large; color: #1E88E5;">L</span>eelavati Classes is a well-established coaching institute dedicated to students of 9th and 10th standard. With a rich history of academic excellence, the class is known for its individual attention to every student, ensuring that each learner receives the support and guidance they need to succeed.
 
 The class is backed by a team of experienced and dedicated faculty members who are passionate about teaching. Their systematic approach includes regular test series, personalized observation, and continuous feedback to monitor student progress effectively.
@@ -670,18 +680,18 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
         <div class="row p-2">
           <div class="col">
         <ion-text style=" color: #1E88E5;font-size: medium;"><ion-icon name="location-outline" style="color: crimson;"></ion-icon>Address:</ion-text><br>
-        <ion-text style="font-size:large ; color:#333333; font-weight: 650;">Leelavati classes 
+        <ion-text style="font-size:large ; color:var(--ion-text-color, #222); font-weight: 650;">Leelavati classes 
        Salisbury park, <span> opp Mahaveer Pratishthan School ,</span>
        <span>Next to Rohan
     Apartment,Near Maharashi Nagar police station, pune 37</span></ion-text>
  <br><br>
  <ion-text style="color:#1E88E5; font-size:medium ;"><ion-icon name="call-outline" style="color: blue;"></ion-icon>Contact Details:</ion-text>
  <br>
- <ion-text (click)="callPhoneNumber(8888388625)" style="color:#333333; font-size:large ; cursor: pointer;"> <b>Mobile No : +91 8888388625, 8446555365</b> <b>Mobile No : +91 8888388625, 8446555365</b> </ion-text>
+ <ion-text (click)="callPhoneNumber(8888388625)" style="color:var(--ion-text-color, #222); font-size:large ; cursor: pointer;"> <b>Mobile No : +91 8888388625, 8446555365</b> <b>Mobile No : +91 8888388625, 8446555365</b> </ion-text>
  <br><br>
  <ion-text style="color:#1E88E5; font-size:medium ;"><ion-icon name="mail-outline" style="color: orange"></ion-icon>Email:</ion-text>
  <br>
- <ion-text style="color:#333333; font-size:large ;"><b>leelawatigmail.com</b></ion-text>
+ <ion-text style="color:var(--ion-text-color, #222); font-size:large ;"><b>leelawatigmail.com</b></ion-text>
 
  
           </div>
@@ -727,7 +737,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
             </div>
             <div class="col-9">
               <ion-title class="mainhead2">Ruchi sharma</ion-title>
-              <p style="font-size: small; color: #333333;">Pune , Mharashta</p>
+              <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
           </div>
@@ -756,7 +766,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
             </div>
             <div class="col-9">
                <ion-title class="mainhead2">Ruchi sharma</ion-title>
-              <p style="font-size: small;">Pune , Mharashta</p>
+              <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
           </div>
@@ -782,7 +792,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
             </div>
             <div class="col-9">
               <ion-title class="mainhead2">Ruchi sharma</ion-title>
-              <p style="font-size: small;">Pune , Mharashta</p>
+              <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
           </div>
@@ -806,7 +816,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
             </div>
             <div class="col-9">
                <ion-title class="mainhead2">Ruchi sharma</ion-title>
-              <p style="font-size: small;">Pune , Mharashta</p>
+              <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
           </div>
@@ -844,9 +854,9 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
         <div class="memory-image">
           <img [src]="memory.imageUrl" [alt]="memory.title" loading="lazy">
           <div class="memory-content">
-            <h3>{{ memory.title }}</h3>
+            <!-- <h3>{{ memory.title }}</h3>
             <p class="memory-date" *ngIf="memory.date">{{ memory.date }}</p>
-            <p class="memory-desc" *ngIf="memory.description">{{ memory.description }}</p>
+            <p class="memory-desc" *ngIf="memory.description">{{ memory.description }}</p> -->
           </div>
         </div>
      
