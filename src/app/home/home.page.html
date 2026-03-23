@@ -29,7 +29,7 @@
                 <ion-title class="subotion" (click)="scrollToSection1('about')"><ion-icon class="inhome" name="id-card"></ion-icon><span style="padding-bottom: 5px;"> About us </span></ion-title> </div>
             <div class="col-2">
               <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
-               <ion-button (click)="callPhoneNumber()" fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+               <ion-button (click)="callPhoneNumber(8888388625)" fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
             </div>
           </div>
         </div>
@@ -90,10 +90,18 @@
 
 </ion-header>
 <ion-content  (ionScroll)="onScroll($event)" scrollEvents="true">
+ 
  <!-- <button class="slide-in-btn">
   Click Me
 </button> -->
 <div class="largedisplay">
+   <div class="news-ticker">
+    
+  <div class="news-text">
+     <!-- <img width="80px" src="assets/homepage/adm-removebg-preview1.png"> -->
+   🔔 Admissions are now open for Grades 8, 9 and 10. Seats fill quickly—secure yours today! ...<span style="color: #ffcc00;">Admissions are now open for Grades 8, 9 and 10. Seats fill quickly—secure yours today! ...</span>                                                                 🔔 Admissions are now open for Grades 8, 9 and 10. Seats fill quickly—secure yours today!
+  </div>
+</div>
   <!-- <swiper  class="mySwiper">
   <ng-template swiperSlide>Slide 1</ng-template>
   <ng-template swiperSlide>Slide 2</ng-template>
@@ -108,15 +116,15 @@
 <div class="bg" id="home">
 <div class="row text-center">
   <div class="col">
-    <br><br><br><br>  <br><br><br>
+    <br><br><br><br>  <br><br>
    <!-- <ion-title class="maintitle">Excellent</ion-title> -->
       <img  height="83px" src="assets/homepage/lawatitext1.png"><br>
       <div class="text-with-cursor">
-   <ion-text class="sub-title">"Empower minds through knowledge and learning" <span class="cursor"></span></ion-text>
+   <ion-text class="sub-title">"Where merit becomes a habit." <span class="cursor"></span></ion-text>
   </div>
   </div>
 </div>
-<br><br> <br> <br><br> <br>
+<br><br> <br> <br><br> 
 <ion-row>
   <ion-col>
 
@@ -186,7 +194,7 @@
     <br><br><br><br>  <br>
    <!-- <ion-title class="maintitle">Excellent</ion-title> -->
       <img height="60px" src="assets/homepage/lawatitext1.png"><br>
-   <ion-text class="sub-title">"Empower minds through knowledge and learning"</ion-text>
+   <ion-text class="sub-title">"Where merit becomes a habit."</ion-text>
   
   </div>
 </div>
@@ -272,6 +280,7 @@
               Welcome to Leelavati Classes, a trusted name in education since 2006. We specialize in coaching 9th and 10th standard students for all subjects, with special focus on Maths, Science, and English.
 
               Unlike large coaching institutes, we offer a personalized, distraction-free, and result-oriented offline learning environment.
+              For nearly two decades Leelavati has been synonymous with top‑tier results. Our consistent record—30 merit‑holders annually for the past 10 years and over 80 students achieving distinction—speaks for itself.
               Our goal is to help students understand concepts thoroughly, develop exam-ready skills, and build confidence for board exams — all through regular practice,
                doubt clearing, and small group attention.
             </ion-text>
@@ -314,9 +323,8 @@
             <div class="row">
               <div class="col">
                 <ion-text style="color:#FFF8E1"  >
-                  At "Leelavati" Classes, we believe every student
-                   deserves focused attention and a clear path to
-                    academic success.</ion-text>
+                 30 merit‑holders every year for the last decade, 80+ distinctions
+</ion-text>
               </div>
             </div>
           </div>
@@ -411,15 +419,15 @@
       <ion-list lines="none" class="bullet-list">
         <ion-item>
           <ion-icon name="copy" slot="start" color="primary"></ion-icon>
-          <ion-label>Maths mastery with problem-solving drills</ion-label>
+          <ion-label> Experienced faculty who turn tough concepts into “aha!” moments.</ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="copy" slot="start" color="primary"></ion-icon>
-          <ion-label>Science labs & demo-based learning</ion-label>
+          <ion-label>As we bridge Grades 9 and 10, our curriculum ensures a smooth transition and strong exam readiness.</ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="copy" slot="start" color="primary"></ion-icon>
-          <ion-label>English fluency and grammar excellence</ion-label>
+          <ion-label> Extensive test‑series schedule that keeps students exam‑ready all year round.</ion-label>
         </ion-item>
       </ion-list>
       <p class="note">Experienced faculty and comprehensive curriculum ensure the best possible education.</p>
@@ -439,7 +447,7 @@
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <h3>Leelavati Classes</h3>
         <p class="klm"><span style="font-size: medium;"><ion-icon name="location"></ion-icon>Address:</span> Salisbury park, opp Mahaveer Pratishthan School ,Next to Rohan Apartment,Near Maharashi Nagar police station, pune.</p>
-        <p style="font-size: large;"><span style="font-size: medium;"><ion-icon name="call"></ion-icon>Phone:</span> +91 8888388625, 8446555365</p>
+        <p style="font-size: large;"><span style="font-size: medium;"><ion-icon name="call"></ion-icon>Phone:</span> +91 <span (click)="callPhoneNumber(8888388625)">8888388625</span>, <span (click)="callPhoneNumber(8888388625)">8446555365</span></p>
         <!-- <p>Email: enquiry @ leelavaticlasses.com</p> -->
         <p style="font-size: large;"><span style="font-size: medium;"><ion-icon name="aperture"></ion-icon>Website:</span> www.leelavaticlasses.com</p>
       </div>
@@ -455,13 +463,13 @@
       <ion-input placeholder="Mobile Number" formControlName="mobile" name="mobile" required></ion-input>
     </ion-item>
 
-    <ion-item class="inputs">
+    <!-- <ion-item class="inputs">
       <ion-select placeholder="Select Course" formControlName="course" name="course" required>
         <ion-select-option>8th Standard</ion-select-option>
         <ion-select-option>9th Standard</ion-select-option>
         <ion-select-option>10th Standard</ion-select-option>
       </ion-select>
-    </ion-item> 
+    </ion-item>  -->
 
     <ion-item class="inputs">
       <ion-textarea placeholder="Inquiry Message" formControlName="message" name="message"></ion-textarea>
@@ -512,7 +520,6 @@
     <div class="row text-center">
       <div class="col">
         <h1 style="color: #1565C0;">Our Pride Facalty</h1>
-        <hr >
       </div>
     </div>
     <br>
@@ -633,14 +640,14 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
     </div>
      <br><br><br>
      <!--location-->
-       <div class="row text-center">
+       <!-- <div class="row text-center">
       <div class="col">
         <h1 style="color: #1565C0;">Location </h1>
       </div>
     </div>
-    <br><br>
+    <br><br> -->
     
-     <ion-row>
+     <!-- <ion-row>
       <ion-col size="10" offset="1">
 
 <div class="caafull">
@@ -650,11 +657,11 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
     
         <div class="cardlocation">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3783.7736855267153!2d73.86883817519107!3d18.493907682594376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMahaveer%20School%20gultekdi%20Swargate!5e0!3m2!1sen!2sin!4v1753030521465!5m2!1sen!2sin" width="280" height="350" style="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3783.7736855267153!2d73.86883817519107!3d18.493907682594376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMahaveer%20School%20gultekdi%20Swargate!5e0!3m2!1sen!2sin!4v1753030521465!5m2!1sen!2sin" width="280" height="350"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         </div>
       </div>
-      <!-- <div class="col-1"></div> -->
+     
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
         
        
@@ -670,13 +677,13 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
  <br><br>
  <ion-text style="color:#1E88E5; font-size:medium ;"><ion-icon name="call-outline" style="color: blue;"></ion-icon>Contact Details:</ion-text>
  <br>
- <ion-text (click)="callPhoneNumber()" style="color:#333333; font-size:large ; cursor: pointer;"> <b>Mobile No : +91 8888388625, 8446555365</b> <b>Mobile No : +91 8888388625, 8446555365</b> </ion-text>
+ <ion-text (click)="callPhoneNumber(8888388625)" style="color:#333333; font-size:large ; cursor: pointer;"> <b>Mobile No : +91 8888388625, 8446555365</b> <b>Mobile No : +91 8888388625, 8446555365</b> </ion-text>
  <br><br>
  <ion-text style="color:#1E88E5; font-size:medium ;"><ion-icon name="mail-outline" style="color: orange"></ion-icon>Email:</ion-text>
  <br>
  <ion-text style="color:#333333; font-size:large ;"><b>leelawatigmail.com</b></ion-text>
 
- <!-- <ion-text style="color: black; font-size:large ;">Mobile No : +91 8888388625</ion-text> -->
+ 
           </div>
         </div>
       </div>
@@ -685,9 +692,9 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
    </div>
     </div>
       </ion-col>
-     </ion-row>
+     </ion-row> -->
     
-    <br><br><br>
+    <!-- <br><br><br> -->
 
 <ion-row>
   <ion-col size="10" offset="1">
@@ -902,7 +909,8 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
       <p  style="color: white;"><i class="fas fa-home mr-3"></i><ion-icon name="location-outline"></ion-icon>Leelavati classes Salisbury park, opp Mahaveer
       Pratishthan School ,Next to Rohan Apartment,Near Maharashi Nagar police station, pune 37</p>
       <!-- <p  style="color: white;"><i class="fas fa-envelope mr-3"></i> info  .com</p> -->
-      <p  style="color: white; cursor: pointer;" (click)="callPhoneNumber()"><i class="fas fa-phone mr-3"></i><ion-icon name="call-outline"></ion-icon> +91 8888388625</p>
+      <p  style="color: white; cursor: pointer;" (click)="callPhoneNumber(8888388625)"><i class="fas fa-phone mr-3"></i><ion-icon name="call-outline"></ion-icon> +91 8888388625</p>
+       <p  style="color: white; cursor: pointer;" (click)="callPhoneNumber(8446555365)"><i class="fas fa-phone mr-3"></i><ion-icon name="call-outline"></ion-icon> +91 8446555365</p>
       <!-- <p  style="color: white;"><i class="fas fa-print mr-3"></i> + 01 234 567 89</p> -->
     </div>
     <!-- Grid column -->
@@ -912,7 +920,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
       <h5 style="color: white;" class="text-uppercase mb-4 font-weight-bold">Follow us</h5>
      <div class="row">
       <div class="col-3">
-        <ion-icon style="color: #25d366; font-size: x-large;" name="logo-whatsapp"></ion-icon>
+        <ion-icon style="color: #25d366; font-size: x-large; cursor: pointer;" name="logo-whatsapp" (click)="contactOwner()"></ion-icon>
 
       </div>
       <div class="col-3">
@@ -935,7 +943,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
   </div>
   <br>
 </div>
-<div
+<!-- <div
  class="text-center p-3"
  style="background-color: wheat"
  >
@@ -943,7 +951,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
 <a class="text-black" href="https://mdbootstrap.com/"
  >MDBootstrap.com</a
 >
-</div>
+</div> -->
 
 
 

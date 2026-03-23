@@ -15,7 +15,7 @@ import { ResultsPage } from './results.page';
     // IonicModule,
     ResultsPageRoutingModule
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  declarations: []
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  // declarations: []
 })
 export class ResultsPageModule {}

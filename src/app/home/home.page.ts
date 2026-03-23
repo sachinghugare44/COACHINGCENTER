@@ -31,6 +31,8 @@ interface Memory {
 export class HomePage implements OnInit {
   
 
+  @ViewChild(IonContent)
+ content: IonContent | undefined;
 
   API_URL = "https://script.google.com/macros/s/AKfycbxnTaRKVDmkrjT2qRwQYCS91r3OOkFEtaK99wC4aF25xdcajAIBOKOz_R_d5OOd7gDy/exec";
 
@@ -40,15 +42,15 @@ export class HomePage implements OnInit {
   swiper?: Swiper;
  
   // view selected img swiper
-  viewSelectedImage(index:number) {
-    this.swiper?.slideTo(index);
-  }
+  // viewSelectedImage(index:number) {
+  //   this.swiper?.slideTo(index);
+  // }
  
-  swiperSlideChanged(e: any) { }
+  // swiperSlideChanged(e: any) { }
  
-  swiperReady() {
-    this.swiper = this.swiperRef?.nativeElement.swiper;
-  }
+  // swiperReady() {
+  //   this.swiper = this.swiperRef?.nativeElement.swiper;
+  // }
   // @ViewChild('swiper')
   // swiperRef: ElementRef | undefined;
   // swiper?: Swiper;
@@ -95,7 +97,7 @@ export class HomePage implements OnInit {
      this.feedbackForm = this.fb.group({
     name: ['', Validators.required],
       mobile: ['', [Validators.required, Validators.minLength(10)]],
-      course: ['', Validators.required],
+      // course: ['', Validators.required],
        message: ['']
     });
 //  this.enquiryForm=this.fb.group({
@@ -154,7 +156,10 @@ isOnline:any
   elements1.forEach(el => observer1.observe(el));
 
   }
-  
+  ionViewWillEnter() {
+    
+    this.scrollToSection1("home");
+  }
   ngAfterViewInit() {
     const target = this.divSection?.nativeElement;
 
@@ -255,10 +260,13 @@ scrollToSection1(sectionId: string): void {
           // Add your logic here when the user reaches the bottom
         }
   }
-phoneNumber = '8888388625';
-  callPhoneNumber() {
-    window.location.href = `tel:${this.phoneNumber}`;
+// phoneNumber = '8888388625';
+  callPhoneNumber(phoneNumber:number) {
+    window.location.href = `tel:${phoneNumber}`;
   }
+  contactOwner() {
+  window.open('https://wa.me/918888388625', '_blank');
+}
   // ONCLICKGOHOME(){
   //   this.route.navigate(['/home'])
   // }
@@ -297,71 +305,94 @@ phoneNumber = '8888388625';
   //   }
   // }
 
-  submitFeedback() {
-  const body = new URLSearchParams();
-  body.append('name', this.feedbackForm.value.name);
-  body.append('mobile', this.feedbackForm.value.mobile);
-  body.append('course', this.feedbackForm.value.course);
- body.append('message', this.feedbackForm.value.message);
-  fetch(this.API_URL, {
-    method: 'POST',
-    body // browser sets Content-Type to application/x-www-form-urlencoded
-    // do NOT set custom headers like Content-Type: application/json (that triggers preflight)
+//   submitFeedback() {
+//   const body = new URLSearchParams();
+//   body.append('name', this.feedbackForm.value.name);
+//   body.append('mobile', this.feedbackForm.value.mobile);
+//   body.append('course', this.feedbackForm.value.course);
+//  body.append('message', this.feedbackForm.value.message);
+//   fetch(this.API_URL, {
+//     method: 'POST',
+//     body // browser sets Content-Type to application/x-www-form-urlencoded
+//     // do NOT set custom headers like Content-Type: application/json (that triggers preflight)
+//   })++
+
+//   .then(res => res.json())
+//   .then(res => {
+//     console.log('success', res);
+//     this.feedbackForm.reset();
+//   })
+//   .catch(err => console.error('submit error', err));
+// }
+submitFeedback() {
+  const data = {
+    name: this.feedbackForm.value.name,
+    mobile: this.feedbackForm.value.mobile,
+    feedback: this.feedbackForm.value.message
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbzeKfPBvIG8Rr-WC0CafATjpkxuByvMT-54jcmWNmKQkE5BgzRe5tVgrW0NUOz7Ty1TLA/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" }
   })
   .then(res => res.json())
-  .then(res => {
-    console.log('success', res);
-    this.feedbackForm.reset();
+  .then(result => {
+    alert("Feedback Saved Successfully!");
   })
-  .catch(err => console.error('submit error', err));
+  .catch(err => {
+    console.log(err)
+    alert("Error saving feedback");
+  });
 }
 
 memories:Memory[] = [
     {  
       id: 1,
-      imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80',
+      imageUrl:'assets/homepage/fgrpwinnerphoto.jpg',
+      // imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80',
       title: 'Annual Day Celebration',
       date: '2024',
       description: 'Students performing cultural programs'
     },
     {
       id: 2,
-      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'assets/homepage/cricket_photo.jpg',
       title: 'Science Exhibition',
       date: '2024',
       description: 'Innovative projects by our students'
     },
     {
       id: 3,
-      imageUrl: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'assets/homepage/girl_grp_photo.jpg',
       title: 'Field Trip',
       date: '2023',
       description: 'Educational visit to historical places'
     },
     {
       id: 4,
-      imageUrl: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'assets/homepage/mot_girl_photo.jpg',
       title: 'Teachers Day',
       date: '2023',
       description: 'Students honoring their teachers'
     },
     {
       id: 5,
-      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'assets/homepage/runnerupgrp_photo.jpg',
       title: 'Farewell Party',
       date: '2023',
       description: 'Celebrating graduating students'
     },
     {
       id: 6,
-      imageUrl: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'assets/homepage/trophy_photo.jpg',
       title: 'Independence Day',
       date: '2023',
       description: 'Patriotic celebrations at school'
     },
     {
       id: 7,
-      imageUrl: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'assets/homepage/winnergrpphoto_mem.jpg',
       title: 'Diwali Celebration',
       date: '2023',
       description: 'Festival of lights with students'

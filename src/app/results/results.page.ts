@@ -3,13 +3,23 @@ import { Router } from '@angular/router';
 import { IonHeader, IonTitle, IonContent, IonToolbar, IonCol, IonRow, IonButton, IonIcon, IonText, IonButtons, IonMenuButton } from "@ionic/angular/standalone";
 import { IonicModule, MenuController } from "@ionic/angular";
 import { HambergerMenuComponent } from '../hamberger-menu/hamberger-menu.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+interface SportsAchievement{
+id: number,
+      imageUrl: string,
+      title:string ,
+      caption:string
+}
 @Component({
   selector: 'app-results',
   templateUrl: './results.page.html',
   styleUrls: ['./results.page.scss'],
 standalone: true,
-  imports: [IonicModule,HambergerMenuComponent]
+  imports: [IonicModule,FormsModule,
+      ReactiveFormsModule,CommonModule]
 })
 export class ResultsPage implements OnInit {
 
@@ -71,8 +81,49 @@ onclickresult(){
 onclickresulthome(){
   this.route.navigate([('/home')])
 }
-phoneNumber = '8888388625';
-  callPhoneNumber() {
-    window.location.href = `tel:${this.phoneNumber}`;
+callPhoneNumber(phoneNumber:number) {
+    window.location.href = `tel:${phoneNumber}`;
   }
+  contactOwner() {
+  window.open('https://wa.me/918888388625', '_blank');
+}
+
+    sportsAchievements: SportsAchievement[] = [
+    {
+      id: 1,
+      imageUrl: 'assets/homepage/winnergrpphoto_mem.jpg',
+      title: 'Cricket Championship 2024',
+      caption: 'Our students won the inter-school cricket tournament'
+    },
+    {
+      id: 2,
+      imageUrl: 'assets/homepage/runnerupgrp_photo.jpg',
+      title: 'Football League Winners',
+      caption: 'Champions of district football league 2024'
+    },
+    {
+      id: 3,
+      imageUrl: 'assets/homepage/mot_photo1.jpg',
+      title: 'Athletics Meet 2024',
+      caption: 'Multiple gold medals in track and field events'
+    },
+    {
+      id: 4,
+      imageUrl: 'assets/homepage/mot_photo.jpg',
+      title: 'Basketball Tournament',
+      caption: 'First place in regional basketball championship'
+    },
+    {
+      id: 5,
+      imageUrl: 'assets/homepage/mot_girl_photo.jpg',
+      title: 'Badminton Excellence',
+      caption: 'Students excel in state badminton competition'
+    },
+    {
+      id: 6,
+      imageUrl: 'assets/homepage/fgrpwinnerphoto.jpg',
+      title: 'Swimming Champions',
+      caption: 'Outstanding performance in swimming championships'
+    }
+  ];
 }
