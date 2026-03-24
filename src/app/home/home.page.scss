@@ -108,7 +108,7 @@ $small-phone: 479px;
     font-weight: 5 00;
   }
   .subotion{
-    font-size: larger;
+    font-size: medium;
     text-align: center;
     padding: 2px;
     color: #F8FBFF;
@@ -118,7 +118,7 @@ $small-phone: 479px;
     cursor: pointer;
     border-radius: 5px;
     color: black;
-  
+    
   }
   .footer-div{
     background-color:#0B3A82; 
@@ -499,8 +499,8 @@ color:white;
 
 .circle-btn {
   width: 100px;
-    height: 59px;
-    border-radius: 40%;
+  height: 59px;
+  border-radius: 40%;
   border: none;
   outline: none;
   background: linear-gradient(135deg,#FFC107 , #f0abfc);
@@ -554,4 +554,84 @@ color:white;
   transform: scale(2);
   opacity: 1;
   transition: 0s;
+}
+
+.memory-card-founder {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 1rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #3b82f6;
+  border-bottom: 4px solid #3b82f6;
+  margin-top: 50px;
+}
+
+.memory-card-founder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+}
+
+.memory-image-founder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f1f5f9;
+  position: relative;
+}
+
+.memory-image-founder img {
+  width: 100%;
+  height: 100%;
+  object-fit:scale-down;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.memory-card-founder:hover .memory-image img {
+  transform: scale(1.05);
+}
+
+.memory-content-founder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4), transparent);
+  padding: 1.5rem 1rem 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.memory-card-founder:hover .memory-content-founder {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.memory-content-founder h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.memory-date-founder {
+  color: #93c5fd;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.memory-desc-founder {
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0 0;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
