@@ -1,0 +1,63 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Enter Student Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-row>
+        <ion-col size="11" offset="1">
+<div class="form-container p-2">
+<form [formGroup]="studentForm" (ngSubmit)="submit()" class="student-form">
+  <div class="form-row">
+    <ion-item><ion-label position="floating">First Name*</ion-label><ion-input formControlName="first_name"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Middle Name</ion-label><ion-input formControlName="middle_name"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Last Name*</ion-label><ion-input formControlName="last_name"></ion-input></ion-item>
+  </div>
+  <hr>
+  <div class="form-row">
+    <ion-item><ion-label position="floating">Mobile No*</ion-label><ion-input formControlName="mobile_no" type="tel"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Parent Name</ion-label><ion-input formControlName="parent_name"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Parent Mobile</ion-label><ion-input formControlName="parent_mobile" type="tel"></ion-input></ion-item>
+  </div>
+  <hr>
+  <div class="form-row">
+    <ion-item><ion-label position="floating">Address</ion-label><ion-input formControlName="address"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Batch</ion-label><ion-input formControlName="stud_batch"></ion-input></ion-item>
+    <ion-item><ion-label position="floating">Section</ion-label><ion-input formControlName="section_std"></ion-input></ion-item>
+  </div>
+  <hr>
+  <div class="form-row">
+    <ion-item><ion-label position="floating">Gender</ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option value="Male">Male</ion-select-option>
+        <ion-select-option value="Female">Female</ion-select-option>
+        <ion-select-option value="Other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item><ion-label position="floating">Status</ion-label>
+      <ion-select formControlName="status">
+        <ion-select-option value="Active">Active</ion-select-option>
+        <ion-select-option value="Inactive">Inactive</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Admission Date</ion-label>
+      <ion-datetime formControlName="date_addmission" presentation="date" placeholder="Select date" display-format="YYYY-MM-DD"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Birth Date</ion-label>
+      <ion-datetime formControlName="birth_date" presentation="date" placeholder="Select date" display-format="YYYY-MM-DD"></ion-datetime>
+    </ion-item>
+  </div>
+  <hr>
+  <div class="form-row">
+    <ion-button expand="block" type="submit" [disabled]="studentForm.invalid">Submit</ion-button>
+  </div>
+  <hr>
+</form>
+</div>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

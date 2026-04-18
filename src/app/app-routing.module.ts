@@ -7,11 +7,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-   {
+  {
     path: 'results',
     loadChildren: () => import('./results/results.module').then( m => m.ResultsPageModule)
   },
-   {
+  {
     path: 'kaalal',
     loadChildren: () => import('./kaalal/kaalal-routing.module').then( m => m.KaalalPageRoutingModule)
   },
@@ -19,14 +19,19 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     // canLoad:[AuthguardService]
-
   },
   {
-    path: 'kaalal',
-    loadChildren: () => import('./kaalal/kaalal-routing.module').then( m => m.KaalalPageRoutingModule)
+    path: 'student-dashboard',
+    loadChildren: () => import('./student-dashboard/student-dashboard.module').then( m => m.StudentDashboardPageModule)
   },
- 
-
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+  path: 'student-details',
+  loadChildren: () => import('./student-details/student-details.module').then( m => m.StudentDetailsModule)
+},
 ];
 @NgModule({
   imports: [

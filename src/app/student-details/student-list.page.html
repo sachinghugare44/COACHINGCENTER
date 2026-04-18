@@ -1,0 +1,10 @@
+<div class="student-list">
+  <div class="student-id-card" *ngFor="let student of students" [routerLink]="['/student-details/details', student.id]">
+    <img [src]="student.photo" alt="Student Photo" class="student-photo">
+    <div class="student-info">
+      <h3>{{ student.first_name }} {{ student.last_name }}</h3>
+      <p>Batch: {{ student.stud_batch }}</p>
+    </div>
+  </div>
+  <ion-button routerLink="/student-details/create" expand="block" color="primary">Add New Student</ion-button>
+</div>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Student Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Attendance Table</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="table-responsive">
+        <table class="attendance-table">
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th *ngFor="let day of daysInMonth">{{ day }}</th>
+              <th>Present</th>
+              <th>Absent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td (click)="openAttendanceDialog(student, 1)" class="clickable">{{ student.rollNo }}</td>
+              <td (click)="openAttendanceDialog(student, 1)" class="clickable">{{ student.name }}</td>
+              <td *ngFor="let day of daysInMonth" (click)="openAttendanceDialog(student, day)" class="clickable">
+                <ion-badge *ngIf="student.attendance[day] === 'P'" color="success">P</ion-badge>
+                <ion-badge *ngIf="student.attendance[day] === 'A'" color="danger">A</ion-badge>
+                <span *ngIf="!student.attendance[day]">-</span>
+              </td>
+              <td>{{ getAttendanceSummary(student).present }}</td>
+              <td>{{ getAttendanceSummary(student).absent }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mini Dialog Box -->
+  <div class="mini-dialog" *ngIf="showDialog">
+    <div class="dialog-content">
+      <h3>Mark Attendance</h3>
+      <p>
+        Student: <b>{{ selectedStudent?.name }}</b><br>
+        Day: <b>{{ selectedDay }}</b>
+      </p>
+      <ion-button color="success" (click)="markAttendance('P')">Present</ion-button>
+      <ion-button color="danger" (click)="markAttendance('A')">Absent</ion-button>
+      <ion-button fill="clear" (click)="closeDialog()">Cancel</ion-button>
+    </div>
+  </div>
+</ion-content>

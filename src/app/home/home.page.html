@@ -27,9 +27,12 @@
               <ion-title class="subotion" (click)="scrollToSection1('service')"><ion-icon  class="inhome" name="newspaper"></ion-icon><span style="padding-bottom: 5px;"> Service </span></ion-title> </div>
               <div class="col-2">
                 <ion-title class="subotion" (click)="scrollToSection1('about')"><ion-icon class="inhome" name="id-card"></ion-icon><span style="padding-bottom: 5px;"> About us </span></ion-title> </div>
-            <div class="col-2">
+            <!-- <div class="col-2">
+              <ion-button class="login-capsule" shape="round" fill="clear" size="small" style="margin-top: 8px;"  (click)="onClickOpenLogin()">Login</ion-button>
+            </div> -->
+            <div class="col-3">
               <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
-               <ion-button (click)="callPhoneNumber(8888388625)" fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+               <ion-button (click)="callPhoneNumber(8888388625)" fill="clear" class="call" color="primary">Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
             </div>
           </div>
         </div>
@@ -54,7 +57,10 @@
           </div>
         </div>
        <div class="col-4"></div>
-        <div class="col-2"  >
+       <!-- <div class="col-2">
+         <ion-button class="login-capsule" shape="round" fill="clear"  size="small" (click)="onClickOpenLogin()" style="margin-top: 8px;">Login</ion-button>
+       </div> -->
+        <div class="col-2">
           <!-- <ion-button (click)="callPhoneNumber()" fill="clear" class="call" >Call Now   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button> -->
               <!-- <ion-buttons slot="end">
       <ion-menu-button menu="mainMenu"></ion-menu-button>
@@ -95,13 +101,12 @@
   Click Me
 </button> -->
 <div class="largedisplay">
-   <div class="news-ticker">
+   <!-- <div class="news-ticker">
     
   <div class="news-text">
-     <!-- <img width="80px" src="assets/homepage/adm-removebg-preview1.png"> -->
    🔔 Admissions are now open for Grades 8, 9 and 10. Seats fill quickly—secure yours today! ...<span style="color: #ffcc00;">Admissions are now open for Grades 8, 9 and 10. Seats fill quickly—secure yours today! ...</span>                                                                 🔔 Admissions are now open for Grades 8, 9 and 10. Seats fill quickly—secure yours today!
   </div>
-</div>
+</div> -->
   <!-- <swiper  class="mySwiper">
   <ng-template swiperSlide>Slide 1</ng-template>
   <ng-template swiperSlide>Slide 2</ng-template>
@@ -294,7 +299,7 @@
         <div class="aslide-in">
         <img height="350px"  src="assets/homepage/why-us.png">
         <!-- <img height="200px" src="assets/homepage/student.png">
-        <img height="200px" src="assets/homepage/girlstudent.png"> -->
+        <img height="200px" src="assets/homepage/boystdlogo.png"> -->
       </div>
       </div>
      
@@ -377,7 +382,7 @@
                   <div class="row p-2">
                     <div class="col">
                       <ion-text class="subtiltecard">
-                        We provide structured notes, practice worksheets, and regular assessments that help students grasp concepts faster and retain better — making learning easier and more organized.</ion-text>
+                        We provide structured notes, practice worksheets, and regular assessments that help students grasp concepts faster and retain better — making learning easier.</ion-text>
                     </div>
                   </div>
                 </div>
@@ -463,14 +468,14 @@
       </div>
       
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <h3>Request a Callbacks</h3>
+        <h3>Request a Enquiry</h3>
        <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
     <ion-item class="inputs">
       <ion-input class="inputs" placeholder="Full Name" formControlName="name" name="name" required></ion-input>
     </ion-item>
 
     <ion-item class="inputs">
-      <ion-input placeholder="Mobile Number" formControlName="mobile" name="mobile" required></ion-input>
+      <ion-input type="tel" maxlength="10" minlength="10" placeholder="Mobile Number" formControlName="mobile" name="mobile" required></ion-input>
     </ion-item>
 
     <!-- <ion-item class="inputs">
@@ -482,10 +487,10 @@
     </ion-item>  -->
 
     <ion-item class="inputs">
-      <ion-textarea placeholder="Inquiry Message" formControlName="message" name="message"></ion-textarea>
+      <ion-textarea placeholder="Enquiry Message" formControlName="message" name="message"></ion-textarea>
     </ion-item>
 
-    <ion-button  class="sb" expand="block" fill="clear" type="submit">Submit Inquiry</ion-button>
+    <ion-button [disabled]="feedbackForm.invalid"  class="sb" expand="block" fill="clear" type="submit">Submit Enquiry</ion-button>
 
   </form>
       </div>
@@ -642,7 +647,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
             </div> -->
             <div class="memory-card-founder slide-in">
         <div class="memory-image-founder">
-          <img src="assets/homepage/founder_image_aifp.png"  loading="lazy">
+          <img src="assets/homepage/founder_image_aifp.jpeg"  loading="lazy">
           <div class="memory-content-founder">
             <h3>Prof. Kishor Avasekar</h3>
             <p class="memory-date-founder">Director</p>
@@ -816,10 +821,10 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
           <br>
           <div class="row">
             <div class="col-3">
-              <img  height="60px" src="assets/homepage/girlstudent.png">
+              <img  height="60px" src="assets/homepage/boystdlogo.png">
             </div>
             <div class="col-9">
-              <ion-title class="mainhead2">Ruchi sharma</ion-title>
+              <ion-title class="mainhead2">Khushi Joshi</ion-title>
               <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
@@ -845,10 +850,10 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
           <br>
           <div class="row">
             <div class="col-3">
-              <img  height="60px" src="assets/homepage/girlstudent.png">
+              <img  height="60px" src="assets/homepage/boystdlogo.png">
             </div>
             <div class="col-9">
-               <ion-title class="mainhead2">Ruchi sharma</ion-title>
+               <ion-title class="mainhead2">Sanket Oswal</ion-title>
               <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
@@ -871,10 +876,10 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
           <br>
           <div class="row">
             <div class="col-3">
-              <img  height="60px" src="assets/homepage/girlstudent.png">
+              <img  height="60px" src="assets/homepage/boystdlogo.png">
             </div>
             <div class="col-9">
-              <ion-title class="mainhead2">Ruchi sharma</ion-title>
+              <ion-title class="mainhead2">Rohit Jain</ion-title>
               <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
@@ -895,10 +900,10 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
           <br>
           <div class="row">
             <div class="col-3">
-              <img  height="60px" src="assets/homepage/girlstudent.png">
+              <img  height="60px" src="assets/homepage/boystdlogo.png">
             </div>
             <div class="col-9">
-               <ion-title class="mainhead2">Ruchi sharma</ion-title>
+               <ion-title class="mainhead2">Nidhi Agrawal</ion-title>
               <p style="font-size: small; color: black;">Pune , Mharashta</p>
               <!-- <div class="col-3"></div> -->
             </div>
@@ -930,7 +935,7 @@ Whether a student is excelling or needs extra motivation, Leelavati Classes is f
     <section class="memories" id="memories" #memoriesSection>
    
     <div class="row">
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12" *ngFor="let memory of memories">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" *ngFor="let memory of memories">
     <!-- <div class="memories-grid"> -->
       
       <div class="memory-card" >

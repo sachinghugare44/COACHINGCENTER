@@ -10,6 +10,7 @@ import { MenuController, ToastController, IonicModule } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import Swiper from 'swiper';
+import { ApiService } from '../services/api.service';
 
 interface Memory {
   id: number;
@@ -93,12 +94,13 @@ export class HomePage implements OnInit {
 
 
 
-  constructor(private fb:FormBuilder,private toast:ToastController,private http:HttpClient,private route:Router, private menuCtrl:MenuController) { 
+  constructor(private fb:FormBuilder,private toast:ToastController,private http:HttpClient,private route:Router,
+     private menuCtrl:MenuController, private apiService:ApiService) { 
      this.feedbackForm = this.fb.group({
     name: ['', Validators.required],
       mobile: ['', [Validators.required, Validators.minLength(10)]],
       // course: ['', Validators.required],
-       message: ['']
+       message: ['',[Validators.required]]
     });
 //  this.enquiryForm=this.fb.group({
 // name: ['', Validators.required],
@@ -154,7 +156,7 @@ isOnline:any
   }, { threshold: 0.3 });
 
   elements1.forEach(el => observer1.observe(el));
-
+  this.getAllUSer();
   }
   ionViewWillEnter() {
     
@@ -216,9 +218,9 @@ isOnline:any
       });
     });
   }
-onclickresult(){
-  this.route.navigate([('/results')])
-}
+  onclickresult(){
+    this.route.navigate([('/results')])
+  }
 scrollToSection1(sectionId: string): void {
     console.log(sectionId)
   const element = document.getElementById(sectionId);
@@ -326,24 +328,22 @@ scrollToSection1(sectionId: string): void {
 // }
 submitFeedback() {
   const data = {
-    name: this.feedbackForm.value.name,
-    mobile: this.feedbackForm.value.mobile,
-    feedback: this.feedbackForm.value.message
+    customer_name: this.feedbackForm.value.name,
+    mobile_number: this.feedbackForm.value.mobile,
+    enquiry_text: this.feedbackForm.value.message
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzeKfPBvIG8Rr-WC0CafATjpkxuByvMT-54jcmWNmKQkE5BgzRe5tVgrW0NUOz7Ty1TLA/exec", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(res => res.json())
-  .then(result => {
-    alert("Feedback Saved Successfully!");
-  })
-  .catch(err => {
-    console.log(err)
-    alert("Error saving feedback");
-  });
+ this.apiService.createCustomerEnquiry(data).subscribe(
+    response => {
+      console.log('Feedback submitted successfully', response);
+      alert("Feedback Submitted Successfully 🎉");
+      this.feedbackForm.reset();
+    },
+    error => {
+      console.error('Error submitting feedback', error);
+      alert("Failed to submit feedback. Please try again.");
+    }
+  );
 }
 
 memories:Memory[] = [
@@ -364,14 +364,14 @@ memories:Memory[] = [
     },
     {
       id: 3,
-      imageUrl: 'assets/homepage/girl_grp_photo.jpg',
+      imageUrl: 'assets/homepage/picicPhoto.jpeg',
       title: 'Field Trip',
       date: '2023',
       description: 'Educational visit to historical places'
     },
     {
       id: 4,
-      imageUrl: 'assets/homepage/mot_girl_photo.jpg',
+      imageUrl: 'assets/homepage/fullpicnicstd.jpeg',
       title: 'Teachers Day',
       date: '2023',
       description: 'Students honoring their teachers'
@@ -385,7 +385,7 @@ memories:Memory[] = [
     },
     {
       id: 6,
-      imageUrl: 'assets/homepage/trophy_photo.jpg',
+      imageUrl: 'assets/homepage/lunchstd.jpeg',
       title: 'Independence Day',
       date: '2023',
       description: 'Patriotic celebrations at school'
@@ -397,13 +397,13 @@ memories:Memory[] = [
       date: '2023',
       description: 'Festival of lights with students'
     },
-    // {
-    //   id: 8,
-    //   imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80',
-    //   title: 'Workshop Session',
-    //   date: '2024',
-    //   description: 'Interactive learning workshops'
-    // },
+    {
+      id: 8,
+      imageUrl: 'assets/homepage/hotelphoto.jpeg',
+      title: 'Workshop Session',
+      date: '2024',
+      description: 'Interactive learning workshops'
+    },
     // {
     //   id: 9,
     //   imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80',
@@ -441,5 +441,16 @@ memories:Memory[] = [
     btn.classList.remove('clicked');
   }, 300);
 }
+userData:any;
+getAllUSer() {
+  this.apiService.getAllStudents().subscribe((res) => {
+    this.userData = res;
+    console.log(this.userData.data)
+  });
 }
 
+onClickOpenLogin() {
+    this.route.navigate(['/student-details']);
+  }
+
+}

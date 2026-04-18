@@ -1,0 +1,18 @@
+
+<ion-button expand="block" color="primary" (click)="goBack()">Back to List</ion-button>
+<div class="student-details-card">
+  <div class="student-details-info" *ngFor="let student of student">
+    <h2>{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</h2>
+    <p><b>Batch:</b> {{ student.stud_batch }}</p>
+    <p><b>Section:</b> {{ student.section_std }}</p>
+    <p><b>Status:</b> {{ student.status }}</p>
+    <p><b>Mobile:</b> {{ student.mobile_no }}</p>
+    <p><b>Parent:</b> {{ student.parent_name }} ({{ student.parent_mobile }})</p>
+    <p><b>Address:</b> {{ student.address }}</p>
+    <p><b>Admission Date:</b> {{ student.date_addmission }}</p>
+    <p><b>Birth Date:</b> {{ student.birth_date }}</p>
+    <p><b>Gender:</b> {{ student.gender }}</p>
+  </div>
+</div>
+
+
