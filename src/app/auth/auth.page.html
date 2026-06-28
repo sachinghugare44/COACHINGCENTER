@@ -1,4 +1,101 @@
+<ion-header  class="largedisplay" style="background-color: #0D47A1;" >
+<div>
+   <ion-row>
+    <ion-col size="10" offset="1">
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5">
+          <div class="row">
+            <div class="col p-1">
+              <img  class="mainlogo" src="assets/homepage/lawatinewlnew3.png">
+            </div>
+          </div>
 
+
+
+
+        </div>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7" style="text-align: right;">
+          <div class="row p-2">
+            <div class="col-2">
+              <ion-title class="subotion" (click)="onClickHome()"><ion-icon class="inhome" name="home"></ion-icon> <span style="padding-bottom: 5px;"> Home </span></ion-title>  </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="onclickresult()" ><ion-icon  class="inhome" name="bar-chart"></ion-icon> <span style="padding-bottom: 5px;"> Result </span></ion-title>
+            
+             </div>
+            <div class="col-2">
+              <ion-title class="subotion"><ion-icon  class="inhome" name="newspaper"></ion-icon><span style="padding-bottom: 5px;"> Service </span></ion-title> </div>
+              <div class="col-2">
+                <ion-title class="subotion"><ion-icon class="inhome" name="id-card"></ion-icon><span style="padding-bottom: 5px;"> About us </span></ion-title> </div>
+            <!-- <div class="col-2">
+              <ion-button class="login-capsule" shape="round" fill="clear" size="small" style="margin-top: 8px;"  (click)="onClickOpenLogin()">Login</ion-button>
+            </div> -->
+            <div class="col-3">
+              <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
+               <ion-button (click)="callPhoneNumber(8888388625)" fill="clear" class="call" color="primary">Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </ion-col>
+  </ion-row>
+</div>
+
+</ion-header>
+<ion-header  class="smalldisplay" style="background-color: #0D47A1;" >
+<div>
+ 
+   <ion-row>
+    <ion-col size="10" offset="1">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col p-2">
+              <img height="30px" src="assets/homepage/leelavatilogofinalsn.png">
+            </div>
+          </div>
+        </div>
+       <div class="col-4"></div>
+       <!-- <div class="col-2">
+         <ion-button class="login-capsule" shape="round" fill="clear"  size="small" (click)="onClickOpenLogin()" style="margin-top: 8px;">Login</ion-button>
+       </div> -->
+        <div class="col-2">
+          <!-- <ion-button (click)="callPhoneNumber()" fill="clear" class="call" >Call Now   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button> -->
+              <!-- <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons> -->
+    <ion-buttons slot="end" style="color:white; padding-left: 14px;">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+
+         </div>
+
+        <!-- <div class="col-xl-7 col-lg-7 col-md-7 col-sm-6" style="text-align: right;">
+          <div class="row p-2">
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('home')">Home</ion-title>  </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('targetSection')" >Result</ion-title>
+            
+             </div>
+            <div class="col-2">
+              <ion-title class="subotion" (click)="scrollToSection1('service')">Service</ion-title> </div>
+              <div class="col-2">
+                <ion-title class="subotion" (click)="scrollToSection1('about')">About us</ion-title> </div>
+            <div class="col-2">
+               <ion-button fill="clear" class="call" >Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    
+    </ion-col>
+  </ion-row>
+</div>
+
+</ion-header>
+<ion-content>
+  <div class="content">
 <div class="auth-outer-center">
   <ion-card class="auth-card">
     <div class="auth-card-inner">
@@ -59,3 +156,5 @@
     </div>
   </ion-card>
 </div>
+</div>
+</ion-content>

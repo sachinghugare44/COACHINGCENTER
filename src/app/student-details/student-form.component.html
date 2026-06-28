@@ -1,63 +1,113 @@
+<ion-content class="ion-padding main-container">
+  <!-- Header Section -->
+  <div class="header-section">
+    <h1>Let's get you started</h1>
+    <p>Enter the details to get going</p>
+  </div>
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Enter Student Details</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
+  <!-- Custom Stepper -->
+  <div class="stepper-container">
+    <div class="step active">
+      <span class="step-number">1</span>
+      <span class="step-label">General Details</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <span class="step-number">2</span>
+      <span class="step-label">Event Details</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <span class="step-number">3</span>
+      <span class="step-label">Pricing and Submit</span>
+    </div>
+  </div>
+
+  <!-- Form Grid -->
+  <ion-grid>
     <ion-row>
-        <ion-col size="11" offset="1">
-<div class="form-container p-2">
-<form [formGroup]="studentForm" (ngSubmit)="submit()" class="student-form">
-  <div class="form-row">
-    <ion-item><ion-label position="floating">First Name*</ion-label><ion-input formControlName="first_name"></ion-input></ion-item>
-    <ion-item><ion-label position="floating">Middle Name</ion-label><ion-input formControlName="middle_name"></ion-input></ion-item>
-    <ion-item><ion-label position="floating">Last Name*</ion-label><ion-input formControlName="last_name"></ion-input></ion-item>
-  </div>
-  <hr>
-  <div class="form-row">
-    <ion-item><ion-label position="floating">Mobile No*</ion-label><ion-input formControlName="mobile_no" type="tel"></ion-input></ion-item>
-    <ion-item><ion-label position="floating">Parent Name</ion-label><ion-input formControlName="parent_name"></ion-input></ion-item>
-    <ion-item><ion-label position="floating">Parent Mobile</ion-label><ion-input formControlName="parent_mobile" type="tel"></ion-input></ion-item>
-  </div>
-  <hr>
-  <div class="form-row">
-    <ion-item><ion-label position="floating">Address</ion-label><ion-input formControlName="address"></ion-input></ion-item>
-    <ion-item><ion-label position="floating">Batch</ion-label><ion-input formControlName="stud_batch"></ion-input></ion-item>
-    <ion-item><ion-label position="floating">Section</ion-label><ion-input formControlName="section_std"></ion-input></ion-item>
-  </div>
-  <hr>
-  <div class="form-row">
-    <ion-item><ion-label position="floating">Gender</ion-label>
-      <ion-select formControlName="gender">
-        <ion-select-option value="Male">Male</ion-select-option>
-        <ion-select-option value="Female">Female</ion-select-option>
-        <ion-select-option value="Other">Other</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item><ion-label position="floating">Status</ion-label>
-      <ion-select formControlName="status">
-        <ion-select-option value="Active">Active</ion-select-option>
-        <ion-select-option value="Inactive">Inactive</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Admission Date</ion-label>
-      <ion-datetime formControlName="date_addmission" presentation="date" placeholder="Select date" display-format="YYYY-MM-DD"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Birth Date</ion-label>
-      <ion-datetime formControlName="birth_date" presentation="date" placeholder="Select date" display-format="YYYY-MM-DD"></ion-datetime>
-    </ion-item>
-  </div>
-  <hr>
-  <div class="form-row">
-    <ion-button expand="block" type="submit" [disabled]="studentForm.invalid">Submit</ion-button>
-  </div>
-  <hr>
-</form>
-</div>
-        </ion-col>
+      <!-- First Name -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">First Name*</ion-label>
+        <ion-input type="text" placeholder="Enter First Name" class="custom-input"></ion-input>
+      </ion-col>
+
+      <!-- Last Name -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Last Name</ion-label>
+        <ion-input type="text" placeholder="Enter your Last Name" class="custom-input"></ion-input>
+      </ion-col>
+
+      <!-- Gender -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Gender*</ion-label>
+        <ion-select placeholder="Select" interface="popover" class="custom-input">
+          <ion-select-option value="male">Male</ion-select-option>
+          <ion-select-option value="female">Female</ion-select-option>
+        </ion-select>
+      </ion-col>
+
+      <!-- Date of Birth (Error State) -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Date of Birth*</ion-label>
+        <div class="input-with-icon error-border">
+          <ion-input type="text" placeholder="Enter your Date of Birth" class="custom-input"></ion-input>
+          <ion-icon name="calendar-outline" slot="end"></ion-icon>
+        </div>
+        <small class="error-text">Please enter date of birth</small>
+      </ion-col>
+
+      <!-- Mother/Father First Name -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Mother/Father's First Name*</ion-label>
+        <ion-input type="text" placeholder="Enter First Name" class="custom-input"></ion-input>
+      </ion-col>
+
+      <!-- Mother/Father Last Name -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Last Name</ion-label>
+        <ion-input type="text" placeholder="Enter Last Name" class="custom-input"></ion-input>
+      </ion-col>
+
+      <!-- Email -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Email Address*</ion-label>
+        <ion-input type="email" placeholder="Enter your Email Address" class="custom-input"></ion-input>
+      </ion-col>
+
+      <!-- Empty Col for Spacing or Pin Code -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Pin Code*</ion-label>
+        <ion-input type="text" placeholder="Enter your area's Pin Code" class="custom-input"></ion-input>
+      </ion-col>
+
+      <!-- Country -->
+      <ion-col size="12" size-md="6">
+         <!-- Note: Position matches layout in Screenshot 2026-05-13 232533.jpg -->
+        <ion-label position="stacked">Country*</ion-label>
+        <ion-select placeholder="Select" interface="popover" class="custom-input">
+          <ion-select-option value="india">India</ion-select-option>
+        </ion-select>
+      </ion-col>
+
+      <!-- Time Zone -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Time Zone*</ion-label>
+        <ion-select value="ist" interface="popover" class="custom-input">
+          <ion-select-option value="ist">IST - Indian Standard Time - GMT +5:30</ion-select-option>
+        </ion-select>
+      </ion-col>
+
+      <!-- Phone Number -->
+      <ion-col size="12" size-md="6">
+        <ion-label position="stacked">Phone Number (include country code)*</ion-label>
+        <ion-input type="tel" placeholder="+919876543210" class="custom-input"></ion-input>
+      </ion-col>
     </ion-row>
 
+    <!-- Footer Button -->
+    <ion-row class="ion-justify-content-center">
+      <ion-button class="next-btn" mode="md">Next</ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>

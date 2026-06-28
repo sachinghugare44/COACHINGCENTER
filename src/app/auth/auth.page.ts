@@ -45,15 +45,18 @@ export class AuthPage {
     this.successMessage = '';
     if (this.loginForm.valid) {
       let requestBody = {
-        username: this.loginForm.value.username,
+        mobile: this.loginForm.value.username,
         password: this.loginForm.value.password
       };
       this.apiService.validateUser(requestBody).subscribe(
         response => {
+          console.log('Login successful:', response);
           this.successMessage = 'Login successful!';
+           this.route.navigate(['/student-dashboard']);
+           localStorage.setItem('mobile', requestBody.mobile);
+           localStorage.setItem('name', requestBody.password);
           setTimeout(() => {
             this.successMessage = '';
-            this.route.navigate(['/student-dashboard']);
           }, 1200);
         },
         error => {
@@ -90,5 +93,16 @@ export class AuthPage {
         }
       );
     }
+  }
+  onClickHome() {
+    this.route.navigate(['/home']);
+  }
+
+  onclickresult(){
+    this.route.navigate([('/results')])
+  }
+
+   callPhoneNumber(phoneNumber:number) {
+    window.location.href = `tel:${phoneNumber}`;
   }
 }

@@ -1,18 +1,140 @@
 
-<ion-button expand="block" color="primary" (click)="goBack()">Back to List</ion-button>
-<div class="student-details-card">
-  <div class="student-details-info" *ngFor="let student of student">
-    <h2>{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</h2>
-    <p><b>Batch:</b> {{ student.stud_batch }}</p>
-    <p><b>Section:</b> {{ student.section_std }}</p>
-    <p><b>Status:</b> {{ student.status }}</p>
-    <p><b>Mobile:</b> {{ student.mobile_no }}</p>
-    <p><b>Parent:</b> {{ student.parent_name }} ({{ student.parent_mobile }})</p>
-    <p><b>Address:</b> {{ student.address }}</p>
-    <p><b>Admission Date:</b> {{ student.date_addmission }}</p>
-    <p><b>Birth Date:</b> {{ student.birth_date }}</p>
-    <p><b>Gender:</b> {{ student.gender }}</p>
-  </div>
-</div>
+<ion-header>
+	<ion-toolbar color="primary" class="dashboard-header-toolbar">
+		<div class="header-content">
+			<ion-title class="dashboard-title desktop-only">Student Details</ion-title>
+			<div class="mobile-menu-toggle mobile-only" (click)="menuExpanded = !menuExpanded">
+				<ion-icon name="menu-outline"></ion-icon>
+			</div>
+			<div class="user-info">
+				<div class="user-details">
+					<div class="user-name">Sachin Ghugare</div>
+					<div class="login-time">Login: 09:15 AM</div>
+				</div>
+				<div class="profile-pic">
+					<img src="assets/icon/profile-demo.jpg" alt="Profile" />
+				</div>
+				<ion-button size="small" color="light" class="logout-btn">
+					<ion-icon name="log-out-outline"></ion-icon>
+					<span class="logout-text">Logout</span>
+				</ion-button>
+			</div>
+		</div>
+	</ion-toolbar>
+</ion-header>
 
 
+<ion-content class="dashboard-content">
+	<div class="dashboard-layout">
+		<!-- Hamburger Menu Overlay for Mobile -->
+		<div class="menu-overlay" *ngIf="isMobile() && menuExpanded" (click)="menuExpanded = false"></div>
+		<!-- Animated Hamburger Menu -->
+		  <div 
+			class="hamburger-menu" 
+			[class.expanded]="menuExpanded"
+			[class.mobile-open]="menuExpanded && isMobile()"
+			(mouseenter)="!isMobile() && (menuExpanded = true)"
+			(mouseleave)="!isMobile() && (menuExpanded = false)"
+			[style.display]="!isMobile() ? 'block' : (menuExpanded ? 'block' : 'none')">
+			<div class="menu-toggle desktop-only">
+				<ion-icon name="menu-outline"></ion-icon>
+			</div>
+			 <ul class="menu-list">
+        <!-- <li (click)="navigateToHome()">
+          <ion-icon name="home-outline" ></ion-icon>
+          <span *ngIf="menuExpanded">Home</span>
+        </li> -->
+
+        <li (click)="navigateToDashboard()">
+          <ion-icon name="analytics-outline"></ion-icon>
+          <span *ngIf="menuExpanded">Dashboard</span>
+        </li>
+        <li (click)="navigateToStudentDetails()">
+          <ion-icon name="person-outline"></ion-icon>
+          <span *ngIf="menuExpanded">Students Details</span>
+        </li>
+        <li (click)="navigateToAttendance()">
+          <ion-icon name="calendar-outline"></ion-icon>
+          <span *ngIf="menuExpanded">Attendance</span>
+        </li>
+        <li (click)="navigateToResults()">
+          <ion-icon name="stats-chart-outline"></ion-icon>
+          <span *ngIf="menuExpanded">Results</span>
+        </li>
+
+        <li (click)="navigateToCustomerEnquiries()">
+          <ion-icon name="list-outline"></ion-icon>
+          <span *ngIf="menuExpanded">Customer Enquiries List</span>
+        </li>
+      </ul>
+		</div>
+
+		<!-- Main Content Area -->
+		<div class="main-content">
+			<!-- Top Search/Filter Section -->
+			<div class="search-filter-row">
+				<ion-searchbar class="student-search" placeholder="Search students..." [(ngModel)]="searchTerm"></ion-searchbar>
+				<div class="filter-actions">
+					<ion-button size="small" color="primary" (click)="openFilter()">
+						<ion-icon name="funnel-outline"></ion-icon> Filter
+					</ion-button>
+					<ion-button size="small" color="medium" (click)="clearFilter()">
+						<ion-icon name="close-circle-outline"></ion-icon> Clear
+					</ion-button>
+				</div>
+			</div>
+
+			<!-- Student Table Section -->
+			<div class="student-table-container">
+				<table class="student-table">
+					<thead>
+						<tr>
+							<th>Stud ID</th>
+							<th>First Name</th>
+							<!-- <th>Middle Name</th>
+							<th>Last Name</th> -->
+							<th>Mobile No</th>
+							<th>Address</th>
+							<th>Date Admission</th>
+							<th>Birth Date</th>
+							<!-- <th>Parent Name</th> -->
+							<th>Parent Mobile</th>
+							<th>Gender</th>
+							<th>Batch</th>
+							<th>Section</th>
+							<!-- <th>Status</th> -->
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let student of students; let i = index">
+							<td>{{student.stud_id}}</td>
+							<td>{{student.first_name}} {{student.middle_name}} {{student.last_name  }}</td>
+							<!-- <td>{{student.middle_name}}</td>
+							<td>{{student.last_name}}</td> -->
+							<td>{{student.mobile_no}}</td>
+							<td>{{student.address}}</td>
+							<td>{{student.date_addmission | date:'dd/MM/yyyy'}}</td>
+							<td>{{student.birth_date | date:'dd/MM/yyyy'}}</td>
+							<!-- <td>{{student.parent_name}}</td> -->
+							<td>{{student.parent_mobile}}</td>
+							<td>{{student.gender}}</td>
+							<td>{{student.stud_batch}}</td>
+							<td>{{student.section_std}}</td>
+							<!-- <td>{{student.status}}</td> -->
+							<td>
+								<ion-button size="small" color="tertiary" class="action-btn">Action</ion-button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- Pagination Controls -->
+				<div class="pagination-controls">
+					<ion-button size="small" [disabled]="currentPage === 1" (click)="prevPage()">Prev</ion-button>
+					<span>Page {{currentPage}} / {{totalPages}}</span>
+					<ion-button size="small" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</ion-button>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

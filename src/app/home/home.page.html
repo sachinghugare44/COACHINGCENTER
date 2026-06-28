@@ -4,7 +4,7 @@
    <ion-row>
     <ion-col size="10" offset="1">
       <div class="row">
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4">
           <div class="row">
             <div class="col p-1">
               <img  class="mainlogo" src="assets/homepage/lawatinewlnew3.png">
@@ -15,13 +15,12 @@
 
 
         </div>
-        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7" style="text-align: right;">
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-7" style="text-align: right;">
           <div class="row p-2">
             <div class="col-2">
               <ion-title class="subotion" (click)="scrollToSection1('home')"><ion-icon class="inhome" name="home"></ion-icon> <span style="padding-bottom: 5px;"> Home </span></ion-title>  </div>
             <div class="col-2">
               <ion-title class="subotion" (click)="onclickresult()" ><ion-icon  class="inhome" name="bar-chart"></ion-icon> <span style="padding-bottom: 5px;"> Result </span></ion-title>
-            
              </div>
             <div class="col-2">
               <ion-title class="subotion" (click)="scrollToSection1('service')"><ion-icon  class="inhome" name="newspaper"></ion-icon><span style="padding-bottom: 5px;"> Service </span></ion-title> </div>
@@ -32,10 +31,16 @@
             </div> -->
             <div class="col-3">
               <!-- <ion-title class="subotion">Contact Us</ion-title>  -->
-               <ion-button (click)="callPhoneNumber(8888388625)" fill="clear" class="call" color="primary">Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+               <ion-button (click)="onClickOpenLogin()" fill="clear" class="login" color="primary">Login <ion-icon name="person-circle-sharp"></ion-icon></ion-button>
+                <ion-button (click)="callPhoneNumber(8888388625)" fill="clear" class="call" color="primary">Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+
             </div>
           </div>
         </div>
+        <!-- <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 p-2">
+                         <ion-button (click)="callPhoneNumber(8888388625)" fill="clear" class="call" color="primary">Call Us   <ion-icon style="padding: 3px;" name="call-sharp"></ion-icon></ion-button>
+
+        </div> -->
       </div>
     
     </ion-col>

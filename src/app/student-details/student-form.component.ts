@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -15,8 +15,10 @@ import { ApiService } from '../services/api.service';
 export class StudentFormComponent implements OnInit {
   @Input() student: any = null; // For edit mode
   studentForm: FormGroup;
-
-  constructor(private fb: FormBuilder,private apiService: ApiService) {
+   menuExpanded = false;
+  constructor(private fb: FormBuilder,
+    private apiService: ApiService
+    , private route: Router) {
     this.studentForm = this.fb.group({
       first_name: ['', Validators.required],
       middle_name: [''],
@@ -39,8 +41,10 @@ export class StudentFormComponent implements OnInit {
       this.studentForm.patchValue(this.student);
     }
   }
-
-  submit() {
+   isMobile(): boolean {
+    return window.innerWidth <= 600;
+  }
+  onSubmit() {
     if (this.studentForm.valid) {
       // Emit or call API here
       let requestBody ={
@@ -57,11 +61,12 @@ export class StudentFormComponent implements OnInit {
         stud_batch: this.studentForm.value.stud_batch,
         section_std: this.studentForm.value.section_std,
         status: this.studentForm.value.status,
-        stud_id:"5757575"
+        stud_id:"12343"
       }
       console.log(requestBody);
       this.apiService.createStudent(requestBody).subscribe(
         response => {
+          this.route.navigate(['/student-details']);
           console.log('Student added successfully', response);
           // Optionally navigate back or reset form
         },
@@ -70,5 +75,35 @@ export class StudentFormComponent implements OnInit {
         }
       );    
     }
+  }
+
+  
+  logout() {
+    localStorage.removeItem('mobile');
+    localStorage.removeItem('password');
+    this.route.navigate(['/auth']);
+  }
+
+  navigateToStudentDetails() {
+    this.route.navigate(['/student-details']);
+  }
+
+  navigateToAttendance() {
+    this.route.navigate(['/attendance']);
+  }
+
+  navigateToAddStudent() {
+    this.route.navigate(['/student-details/student-form']);
+  }
+
+  navigateToResults() {
+    this.route.navigate(['/results']);
+  }
+
+  navigateToCustomerEnquiries() {
+    this.route.navigate(['/student-dashboard/customer-enquiry']);
+  }
+  navigateToHome() {
+    this.route.navigate(['/home']);
   }
 }

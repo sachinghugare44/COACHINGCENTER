@@ -450,7 +450,7 @@ getAllUSer() {
 }
 
 onClickOpenLogin() {
-    this.route.navigate(['/student-details']);
+    this.route.navigate(['/auth']);
   }
 
 }

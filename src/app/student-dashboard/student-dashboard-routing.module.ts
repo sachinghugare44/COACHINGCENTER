@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentDashboardPage } from './student-dashboard.page';
 
+import { CustomerEnquiryPage } from './customer-enquiry.page';
+
 const routes: Routes = [
   {
     path: '',
     component: StudentDashboardPage
+  },
+  {
+    path: 'customer-enquiry',
+    component: CustomerEnquiryPage
   }
 ];
 

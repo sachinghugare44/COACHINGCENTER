@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { IonicModule, ModalController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
+ 
 
 interface Student {
   rollNo: number;
@@ -15,41 +19,85 @@ interface Student {
   standalone: true,
   imports: [IonicModule, CommonModule]
 })
-export class StudentDashboardPage {
-  daysInMonth = Array.from({ length: 30 }, (_, i) => i + 1); // 30 days
-  students: Student[] = [
-    { rollNo: 1, name: 'Amit Kumar', attendance: {} },
-    { rollNo: 2, name: 'Priya Singh', attendance: {} },
-    { rollNo: 3, name: 'Rahul Sharma', attendance: {} },
-    { rollNo: 4, name: 'Sneha Patel', attendance: {} },
-  ];
-
-  selectedStudent: Student | null = null;
-  selectedDay: number | null = null;
-  showDialog = false;
-
-  openAttendanceDialog(student: Student, day: number) {
-    this.selectedStudent = student;
-    this.selectedDay = day;
-    this.showDialog = true;
-  }
-
-  markAttendance(status: 'P' | 'A') {
-    if (this.selectedStudent && this.selectedDay) {
-      this.selectedStudent.attendance[this.selectedDay] = status;
+export class StudentDashboardPage implements OnInit {
+  constructor(private route: Router) {}
+  ngOnInit() {
+    // Check if user is logged in
+    const mobile = localStorage.getItem('mobile');
+    const password = localStorage.getItem('password');
+    if (!mobile || !password) {
+      this.route.navigate(['/auth']);
     }
-    this.closeDialog();
   }
 
-  closeDialog() {
-    this.showDialog = false;
-    this.selectedStudent = null;
-    this.selectedDay = null;
+  menuExpanded = false;
+
+  // For bar chart demo
+  ngAfterViewInit() {
+    // Chart.js is used for the bar graph. You must install it: npm install chart.js
+    // @ts-ignore
+    import('chart.js/auto').then((Chart) => {
+      const ctx = document.getElementById('genderBarChart') as HTMLCanvasElement;
+      if (ctx) {
+        new Chart.default(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['2022', '2023', '2024', '2025'],
+            datasets: [
+              {
+                label: 'Boys',
+                data: [40, 45, 50, 55],
+                backgroundColor: 'rgba(54, 162, 235, 0.7)'
+              },
+              {
+                label: 'Girls',
+                data: [35, 38, 42, 48],
+                backgroundColor: 'rgba(255, 99, 132, 0.7)'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: 'top' },
+              title: { display: false }
+            }
+          }
+        });
+      }
+    });
+  }
+   isMobile(): boolean {
+    return window.innerWidth <= 600;
   }
 
-  getAttendanceSummary(student: Student) {
-    const present = Object.values(student.attendance).filter(a => a === 'P').length;
-    const absent = Object.values(student.attendance).filter(a => a === 'A').length;
-    return { present, absent };
+  logout() {
+    localStorage.removeItem('mobile');
+    localStorage.removeItem('password');
+    this.route.navigate(['/auth']);
   }
+
+  navigateToStudentDetails() {
+    this.route.navigate(['/student-details']);
+  }
+
+  navigateToAttendance() {
+    this.route.navigate(['/attendance']);
+  }
+
+  navigateToAddStudent() {
+    this.route.navigate(['/student-details/student-form']);
+  }
+
+  navigateToResults() {
+    this.route.navigate(['/results']);
+  }
+
+  navigateToCustomerEnquiries() {
+    this.route.navigate(['/student-dashboard/customer-enquiry']);
+  }
+  navigateToHome() {
+    this.route.navigate(['/home']);
+  }
+
 }

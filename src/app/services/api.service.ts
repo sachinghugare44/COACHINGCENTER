@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  baseUrl = 'https://leelavati-backend.onrender.com';
+  baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +24,7 @@ export class ApiService {
   }
 
   createStudent(data: any) {
-    return this.http.post(`${this.baseUrl}/student`, data);
+    return this.http.post(`${this.baseUrl}/student-details`, data);
   }
 
   getAllStudents() {
@@ -32,5 +33,9 @@ export class ApiService {
 
   createCustomerEnquiry(data: any) {
     return this.http.post(`${this.baseUrl}/customer-enquiry`, data);
+  }
+
+  getAllCustomerEnquiries() {
+    return this.http.get(`${this.baseUrl}/customer-enquiry`);
   }
 }
